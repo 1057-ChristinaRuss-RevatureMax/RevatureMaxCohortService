@@ -88,5 +88,6 @@
     <orderEntry type="library" name="Maven: classworlds:classworlds:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.aether:aether-api:0.9.0.M2" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.aether:aether-util:0.9.0.M2" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20210307" level="project" />
   </component>
 </module>

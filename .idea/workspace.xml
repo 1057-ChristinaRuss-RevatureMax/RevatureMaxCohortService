@@ -5,32 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/Java-Impl.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/com/Revature/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/config/config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/controllers/controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/dao/dao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/dbconfig/ConnectionConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/frontcontroller/fcontroller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/main/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/models/user/model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Impl/src/services/user/service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RevatureMaxCohortService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RevatureMaxCohortService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ControllerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/user/model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/Associate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/user/model.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
