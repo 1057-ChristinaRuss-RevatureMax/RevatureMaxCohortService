@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/Java-Impl.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/com/Revature/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/config/config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/controllers/controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/dao/dao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/dbconfig/ConnectionConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/frontcontroller/fcontroller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/main/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/models/user/model.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Impl/src/services/user/service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RevatureMaxCohortService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RevatureMaxCohortService.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1vueUR8643tyvaqvdKDgJUlwIfQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="main.app" />
+      <module name="RevatureMaxCohortService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.app" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="" />
+      <created>1627416417048</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627416417048</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
