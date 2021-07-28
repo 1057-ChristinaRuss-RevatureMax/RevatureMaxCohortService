@@ -12,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ControllerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ControllerUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/apiUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/apiUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/driver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/app.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/AssociateAssignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/AssociateAssignment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/user/Associate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/Associate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/ControllerUtils.class" beforeDir="false" />

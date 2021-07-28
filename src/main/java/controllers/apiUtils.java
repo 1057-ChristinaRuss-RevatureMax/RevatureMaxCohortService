@@ -4,7 +4,6 @@ package controllers;
 import models.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import models.AssociateAssignment;
 
 import java.util.ArrayList;
 
@@ -19,7 +18,8 @@ public class apiUtils {
                     jsonObject.getString("firstName"),
                     jsonObject.getString("lastName"),
                     jsonObject.getString("email"),
-                    jsonObject.getString("salesforceId")));
+                    jsonObject.getString("salesforceId")
+            ));
         }
         return userList;
     }
@@ -30,10 +30,11 @@ public class apiUtils {
         JSONObject jsonObject;
         for (int i = 0; i < jsonArray.length(); i++){
             jsonObject = jsonArray.getJSONObject(i);
+            System.out.println(jsonObject);
             assignmentList.add(new AssociateAssignment(
                     jsonObject.getBoolean("active"),
-                    jsonObject.get("associate"),
-                    jsonObject.get("batch"),
+                    jsonObject.getAssociate("associate"),
+                    jsonObject.getBatch("batch"),
                     jsonObject.getString("endDate"),
                     jsonObject.getString("startDate"),
                     jsonObject.getString("trainingStatus")
