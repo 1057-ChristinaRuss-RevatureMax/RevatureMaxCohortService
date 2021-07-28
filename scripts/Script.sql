@@ -4,7 +4,7 @@ drop table if exists employee;
 
 
 create table associate(
-	salesforceId INT primary key not null,
+	salesforceId varchar(10) primary key not null,
 	bio text,
 	favorite_technologies text,
 	preference varchar(15)
@@ -12,7 +12,7 @@ create table associate(
 );
 
 create table employee(
-	salesforceId INT primary key not null,
+	salesforceId varchar(10) primary key not null,
 	bio text,
 	technology text,
 	trainer_location varchar(25)
