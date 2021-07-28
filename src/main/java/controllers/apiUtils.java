@@ -22,7 +22,7 @@ public class apiUtils {
 
     public static HashMap<String, String> mapFromJson(String json) {
         HashMap<String, String> paramMap = new HashMap<String, String>();
-        // splice the {" ... "} from the ends, assume the rest is flat json -- no more embedded objects
+
         if (json.length() > 2)
             json = json.substring(1, json.length() - 1);
         else
@@ -43,4 +43,5 @@ public class apiUtils {
         }
         return paramMap;
     }
+
 }

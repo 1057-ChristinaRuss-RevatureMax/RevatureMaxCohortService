@@ -33,7 +33,7 @@ public class apiDAOimpl implements apiDAO{
         try {
             //Establish the connection to the DB
             conn = ConnectionConfig.getConnection();
-            final String SQL = "SELECT * FROM Revature_users where user_name=? AND user_pass=?";
+            final String SQL = "SELECT user_name, user_pass FROM Revature_users where user_name=? AND user_pass=?";
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, username);

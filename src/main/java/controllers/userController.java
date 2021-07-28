@@ -21,19 +21,14 @@ public class userController {
             String username = null;
             String password = null;
 
-            String body = context.body();
-            HashMap<String, String> paramMap = null;
-            if (body.length() > 2) {
-                paramMap = apiUtils.mapFromJson(body);
-                username = paramMap.get("username");
-                password = paramMap.get("password");
-            }
-
+            username = context.formParam("username");
+            password = context.formParam("password");
             boolean login = userservice.loginUser(username, password);
             if (username != null && password != null && login) {
                 LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
                 context.sessionAttribute("session_username", username);
-                context.json("{\"Success\": \"login successful\"}").status(200);
+                context.json("{Success: login successful}").status(200);
+
             } else {
                 LoggerConfig.log(userController.class.getSimpleName(), "User login failed, username: " + username);
                 context.json("{}").status(400);

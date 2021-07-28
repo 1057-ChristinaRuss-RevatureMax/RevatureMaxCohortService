@@ -5,26 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/ConnectionConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RevatureMaxCohortService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RevatureMaxCohortService.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ConnectionConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/apiUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/apiUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/apiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbconfig/ConnectionConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/driver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontcontroller/fcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontcontroller/FrontController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/app.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ControllerUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/dao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dbconfig/ConnectionConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/frontcontroller/fcontroller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/app.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/Associate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/userServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/ConnectionConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/ConnectionConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/userController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/apiDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/apiDAOimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/userServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/userServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,76 +133,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="42" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

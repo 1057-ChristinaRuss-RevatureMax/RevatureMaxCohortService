@@ -13,9 +13,9 @@ public class ConnectionConfig {
 
             String hostname =  "localhost";
             String port = "5432";
-            String userName = System.getenv("TEST_DB_USER");
-            String password = System.getenv("TEST_DB_PASS");
-            String dbName = System.getenv("DB_NAME");
+            String userName = System.getenv("db_name");
+            String password = System.getenv("db_password");
+            String dbName = System.getenv("db_name");
 
             // Parameters for setting up the jdbcURL loaded in to connect to database currently set as postgres (anyone can access)
             String jdbcUrl = "jdbc:postgresql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
