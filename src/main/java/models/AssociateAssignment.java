@@ -1,24 +1,21 @@
 package models;
 
 public class AssociateAssignment {
-    private boolean active;
-    private Associate associate;
-    private Batch batch;
-    private String endDate;
-    private String startDate;
-    private String trainingStatus;
+        private boolean active;
+        private Associate associate;
+        private Batch batch;
+        private String endDate;
+        private String startDate;
+        private String trainingStatus;
 
-    public AssociateAssignment(boolean active, Associate associate, Batch batch, String endDate, String startDate, String trainingStatus) {
-        this.active = active;
-        this.associate = associate;
-        this.batch = batch;
-        this.endDate = endDate;
-        this.startDate = startDate;
-        this.trainingStatus = trainingStatus;
-    }
-
-    public AssociateAssignment() {
-    }
+        public AssociateAssignment(boolean active, Associate associate, Batch batch, String endDate, String startDate, String trainingStatus) {
+            this.active = active;
+            this.associate = associate;
+            this.batch = batch;
+            this.endDate = endDate;
+            this.startDate = startDate;
+            this.trainingStatus = trainingStatus;
+        }
 
     public boolean isActive() {
         return active;
@@ -36,13 +33,9 @@ public class AssociateAssignment {
         this.associate = associate;
     }
 
-    public Batch getBatch() {
-        return batch;
-    }
+    public Batch getBatch() { return batch; }
 
-    public void setBatch(Batch batch) {
-        this.batch = batch;
-    }
+    public void setBatch(Batch batch) { this.batch = batch;}
 
     public String getEndDate() {
         return endDate;
@@ -70,13 +63,13 @@ public class AssociateAssignment {
 
     @Override
     public String toString() {
-        return "AssociateAssignment{" +
-                "active=" + active +
-                ", associate=" + associate +
-                ", batch=" + batch +
-                ", endDate='" + endDate + '\'' +
-                ", startDate='" + startDate + '\'' +
-                ", trainingStatus='" + trainingStatus + '\'' +
+        return "{" +
+                "'active':'" + active +
+                ", 'associate':'" + associate +
+                ", 'associate':'" + batch +
+                ", 'endDate=':'" + endDate + '\'' +
+                ", 'startDate=':'" + startDate + '\'' +
+                ", 'trainingStatus':'" + trainingStatus + '\'' +
                 '}';
     }
 }
