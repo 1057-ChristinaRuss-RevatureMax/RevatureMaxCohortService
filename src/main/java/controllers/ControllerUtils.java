@@ -3,7 +3,7 @@ package controllers;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import user.Associate;
+import models.Associate;
 
 import java.util.ArrayList;
 

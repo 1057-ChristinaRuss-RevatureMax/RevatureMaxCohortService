@@ -1,4 +1,4 @@
-package user;
+package models;
 
 public class Associate {
     private String firstname;
@@ -7,7 +7,7 @@ public class Associate {
     private String salesforceId;
 //    private String flag;
 
-    public Associate(String firstname, String lastname, String email, String salesforceId){
+    public Associate(String firstname, String lastname, String email, String salesforceId) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
@@ -56,4 +56,3 @@ public class Associate {
                 '}';
     }
 }
-
