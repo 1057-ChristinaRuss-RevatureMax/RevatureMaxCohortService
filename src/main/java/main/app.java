@@ -5,6 +5,7 @@ import controllers.*;
 import controllers.Controller;
 import jdk.internal.util.xml.impl.Input;
 import controllers.ControllerUtils.*;
+import user.Associate;
 
 
 
@@ -13,7 +14,6 @@ import controllers.ControllerUtils.*;
 public class app {
     public static void main( String[] args){
         Controller.getAllUsers();
-        String category = "email";
-        ControllerUtils.JSONconvert(Controller.getAllUsers(), category);
+        System.out.println(ControllerUtils.JSONconvert(Controller.getAllUsers()));
     }
 }

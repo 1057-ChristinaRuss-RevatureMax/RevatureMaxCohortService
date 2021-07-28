@@ -5,15 +5,24 @@ public class Associate {
     private String firstname;
     private boolean flag;
     private String lastname;
+<<<<<<< Updated upstream
     private int salesforceId;
     private AssociateAssignment trainingAssignments;
 
     public Associate(String email, String firstname, boolean flag, String lastname, int salesforceId, AssociateAssignment trainingAssignments) {
         this.email = email;
+=======
+    private String email;
+    private String salesforceId;
+//    private String flag;
+
+    public Associate(String firstname, String lastname, String email, String salesforceId){
+>>>>>>> Stashed changes
         this.firstname = firstname;
         this.flag = flag;
         this.lastname = lastname;
         this.salesforceId = salesforceId;
+<<<<<<< Updated upstream
         this.trainingAssignments = trainingAssignments;
     }
 
@@ -23,6 +32,8 @@ public class Associate {
 
     public void setEmail(String email) {
         this.email = email;
+=======
+>>>>>>> Stashed changes
     }
 
     public String getFirstname() {
@@ -49,14 +60,15 @@ public class Associate {
         this.lastname = lastname;
     }
 
-    public int getSalesforceId() {
+    public String getSalesforceId() {
         return salesforceId;
     }
 
-    public void setSalesforceId(int salesforceId) {
+    public void setSalesforceId(String salesforceId) {
         this.salesforceId = salesforceId;
     }
 
+<<<<<<< Updated upstream
     public AssociateAssignment getTrainingAssignments() {
         return trainingAssignments;
     }
@@ -265,5 +277,15 @@ class AssociateAssignment{
 
     public void setTrainingStatus(String trainingStatus) {
         this.trainingStatus = trainingStatus;
+=======
+    @Override
+    public String toString() {
+        return "{" +
+                "'firstname':'" + firstname + '\'' +
+                ", 'lastname':'" + lastname + '\'' +
+                ", 'email':'" + email + '\'' +
+                ", 'salesforceId':'" + salesforceId + '\'' +
+                '}';
+>>>>>>> Stashed changes
     }
 }
