@@ -13,6 +13,7 @@ public class Dispatcher {
         app.get("/", userController::loginUser);
         app.get("/login", userController::loginUser);
         app.post("/login", userController::loginUser);
+        app.get("/invalid", userController::loginUser);
 
     }
 

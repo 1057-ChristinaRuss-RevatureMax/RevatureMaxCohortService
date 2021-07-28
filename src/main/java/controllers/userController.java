@@ -32,6 +32,7 @@ public class userController {
             } else {
                 LoggerConfig.log(userController.class.getSimpleName(), "User login failed, username: " + username);
                 context.json("{}").status(400);
+                
             }
 
 

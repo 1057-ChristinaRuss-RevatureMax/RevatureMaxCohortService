@@ -16,6 +16,8 @@ public class FrontController {
         this.app.before("/api/", FrontController::checkAllRequest);
 
         this.dispatcher = new Dispatcher(app);
+
+
     }
 
     public static void checkAllRequest(Context context) {
