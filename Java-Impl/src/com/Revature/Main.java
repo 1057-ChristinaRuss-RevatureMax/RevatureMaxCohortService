@@ -28,6 +28,12 @@ public class Main {
                 while ((output = br.readLine()) != null) {
                     System.out.println(output);
                 }
+                JSONArray jsonarray = new JSONArray(responseContent.toString());
+                for (int i = 0; i < jsonarray.length(); i++) {
+                    JSONObject jsonobject = jsonarray.getJSONObject(i);
+                    System.out.print(jsonobject.getString("firstName"));
+                }
+                System.out.println();
                 conn.disconnect();
             }
         } catch(Exception e) {
