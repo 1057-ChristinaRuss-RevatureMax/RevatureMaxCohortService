@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/index.css"/>
+    <link rel="shortcut icon" type="image/jpg" href="revature-styles/favicon.png"/>
+    <title>Revature</title>
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h2 class="active">  </h2>
+        <div class="fadeIn first">
+            <img src="revature-styles/rev-logo.png" id="icon" alt="User Icon"/>
+        </div>
+        <form method="post" action="/login">
+            <header><h3 class="active" id="invalid"></h3></header>
+            <input type="text" class="fadeIn second" placeholder="Username" name="username" id="username" maxlength="20" required/>
+            <input type="password" placeholder="Password" name="password" id="password" class="fadeIn third" maxlength="20" required/>
+            <br><br>
+            <input type="submit" class="fadeIn fourth" value="Log In" id="submit"/>
+        </form>
+    </div>
+</div>
+<script src="/index.js"></script>
+</body>
+</html>
