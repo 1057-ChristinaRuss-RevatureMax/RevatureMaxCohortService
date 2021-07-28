@@ -1,21 +1,19 @@
 package models;
 
 public class AssociateAssignment {
-        private boolean active;
-        private Associate associate;
-        private Batch batch;
-        private String endDate;
-        private String startDate;
-        private String trainingStatus;
+    private boolean active;
+    private Associate associate;
+    private String endDate;
+    private String startDate;
+    private String trainingStatus;
 
-        public AssociateAssignment(boolean active, Associate associate, Batch batch, String endDate, String startDate, String trainingStatus) {
-            this.active = active;
-            this.associate = associate;
-            this.batch = batch;
-            this.endDate = endDate;
-            this.startDate = startDate;
-            this.trainingStatus = trainingStatus;
-        }
+    public AssociateAssignment(boolean active, Associate associate, String endDate, String startDate, String trainingStatus) {
+        this.active = active;
+        this.associate = associate;
+        this.endDate = endDate;
+        this.startDate = startDate;
+        this.trainingStatus = trainingStatus;
+    }
 
     public boolean isActive() {
         return active;
@@ -32,10 +30,6 @@ public class AssociateAssignment {
     public void setAssociate(Associate associate) {
         this.associate = associate;
     }
-
-    public Batch getBatch() { return batch; }
-
-    public void setBatch(Batch batch) { this.batch = batch;}
 
     public String getEndDate() {
         return endDate;
@@ -66,7 +60,6 @@ public class AssociateAssignment {
         return "{" +
                 "'active':'" + active +
                 ", 'associate':'" + associate +
-                ", 'associate':'" + batch +
                 ", 'endDate=':'" + endDate + '\'' +
                 ", 'startDate=':'" + startDate + '\'' +
                 ", 'trainingStatus':'" + trainingStatus + '\'' +
