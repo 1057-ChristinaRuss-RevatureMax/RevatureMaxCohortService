@@ -1,4 +1,4 @@
-package controllers;
+package dao;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Controller {
+public class apiDAO {
     public static String getAllUsers()
     {
         BufferedReader reader;

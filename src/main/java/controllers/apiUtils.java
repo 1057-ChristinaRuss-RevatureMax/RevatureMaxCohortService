@@ -7,7 +7,7 @@ import models.Associate;
 
 import java.util.ArrayList;
 
-public class ControllerUtils {
+public class apiUtils {
     public static ArrayList<Associate> JSONconvert(String paramBody) {
         ArrayList userList = new ArrayList<Associate>();
         JSONArray jsonarray = new JSONArray(paramBody);
