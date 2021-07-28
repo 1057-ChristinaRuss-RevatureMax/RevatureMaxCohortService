@@ -1,0 +1,78 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import dbconfig.ConnectionConfig;
+import dbconfig.ResourceClosure;
+import models.Associate;
+import models.AssociateDto;
+
+public class AssociateDaoImpl implements AssociateDao {
+
+    public AssociateDaoImpl() {
+		
+    }
+    
+    @Override
+    public void updateBio(String salesforceId, String bio){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+			conn = ConnectionConfig.getConnection();
+			final String SQL = "update associate set bio = ? where salesforceId = ?";
+			stmt = conn.prepareStatement(SQL);
+			stmt.setString(1, bio);
+			stmt.setString(2, salesforceId);
+			stmt.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			ResourceClosure.closeConnection(conn);
+			ResourceClosure.closeStatement(stmt);
+		}
+        
+    }
+    @Override
+    public void updatePreference(String salesforceId, String preference){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+			conn = ConnectionConfig.getConnection();
+			final String SQL = "update associate set preference = ? where salesforceId = ?";
+			stmt = conn.prepareStatement(SQL);
+			stmt.setString(1, preference);
+			stmt.setString(2, salesforceId);
+			stmt.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			ResourceClosure.closeConnection(conn);
+			ResourceClosure.closeStatement(stmt);
+		}
+    }
+    @Override
+    public void updateFavoriteTechnologies(String salesforceId, String technologies){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+			conn = ConnectionConfig.getConnection();
+			final String SQL = "update associate set favorite_technologies = ? where salesforceId = ?";
+			stmt = conn.prepareStatement(SQL);
+			stmt.setString(1, technologies);
+			stmt.setString(2, salesforceId);
+			stmt.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			ResourceClosure.closeConnection(conn);
+			ResourceClosure.closeStatement(stmt);
+		}
+    }
+
+}
