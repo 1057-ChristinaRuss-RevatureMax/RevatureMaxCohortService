@@ -13,8 +13,11 @@ public class Dispatcher {
         app.get("/", userController::loginUser);
         app.get("/login", userController::loginUser);
         app.post("/login", userController::loginUser);
-        app.get("/invalid", userController::loginUser);
-
-    }
-
+        app.get("/invalid", ctx -> {
+            if (ctx.sessionAttribute("session_username") == "invalid") {
+                ctx.json("invalid");
+                ctx.sessionAttribute("session_username", null);
+            }
+    });
+}
 }

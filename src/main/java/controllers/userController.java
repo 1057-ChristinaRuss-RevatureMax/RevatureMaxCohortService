@@ -24,17 +24,21 @@ public class userController {
             username = context.formParam("username");
             password = context.formParam("password");
             boolean login = userservice.loginUser(username, password);
+            if (login == false) {
+                context.sessionAttribute("session_username", "invalid");
+            }
             if (username != null && password != null && login) {
                 LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
                 context.sessionAttribute("session_username", username);
                 context.json("{Success: login successful}").status(200);
-
-            } else {
-                LoggerConfig.log(userController.class.getSimpleName(), "User login failed, username: " + username);
-                context.json("{}").status(400);
-                
             }
+            else {
+                context.sessionAttribute("session_username", username);
+                LoggerConfig.log(userController.class.getSimpleName(), "User login failed, username: " + username);
+                context.sessionAttribute("session_username", "invalid");
+                context.redirect("/login");
 
+            }
 
         } else {
             context.render("/index/index.html");
