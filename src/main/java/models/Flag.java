@@ -11,6 +11,9 @@ public class Flag {
         this.type = type;
     }
 
+    public Flag() {
+    }
+
     public String getContent() {
         return content;
     }

@@ -14,6 +14,10 @@ public class EmployeeAssignment {
         this.role = role;
     }
 
+    public EmployeeAssignment() {
+
+    }
+
     public Batch getBatch() {
         return batch;
     }

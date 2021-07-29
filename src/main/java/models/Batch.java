@@ -33,6 +33,9 @@ public class Batch {
         this.type = type;
     }
 
+    public Batch() {
+    }
+
     public AssociateAssignment[] getAssociateAssignments() {
         return associateAssignments;
     }

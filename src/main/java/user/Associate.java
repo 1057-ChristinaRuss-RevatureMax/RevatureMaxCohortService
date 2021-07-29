@@ -1,6 +1,6 @@
 package user;
 
-import models.EmployeeAssignment;
+import models.AssociateAssignment;
 
 public class Associate {
     private String email;
@@ -66,206 +66,16 @@ public class Associate {
     public void setTrainingAssignments(AssociateAssignment trainingAssignments) {
         this.trainingAssignments = trainingAssignments;
     }
-}
 
-    class Batch {
-        private AssociateAssignment[] associateAssignments;
-        private String batchId;
-        private int currentWeek;
-        private EmployeeAssignment[] employeeAssignments;
-        private String endDate;
-        private int goodGrade;
-        private int id;
-        private String location;
-        private String name;
-        private int passingGrade;
-        private String skill;
-        private String startDate;
-        private String type;
-
-        public Batch(AssociateAssignment[] associateAssignments, String batchId, int currentWeek, EmployeeAssignment[] employeeAssignments, String endDate, int goodGrade, int id, String location, String name, int passingGrade, String skill, String startDate, String type) {
-            this.associateAssignments = associateAssignments;
-            this.batchId = batchId;
-            this.currentWeek = currentWeek;
-            this.employeeAssignments = employeeAssignments;
-            this.endDate = endDate;
-            this.goodGrade = goodGrade;
-            this.id = id;
-            this.location = location;
-            this.name = name;
-            this.passingGrade = passingGrade;
-            this.skill = skill;
-            this.startDate = startDate;
-            this.type = type;
-        }
-
-        public AssociateAssignment[] getAssociateAssignments() {
-            return associateAssignments;
-        }
-
-        public void setAssociateAssignments(AssociateAssignment[] associateAssignments) {
-            this.associateAssignments = associateAssignments;
-        }
-
-        public String getBatchId() {
-            return batchId;
-        }
-
-        public void setBatchId(String batchId) {
-            this.batchId = batchId;
-        }
-
-        public int getCurrentWeek() {
-            return currentWeek;
-        }
-
-        public void setCurrentWeek(int currentWeek) {
-            this.currentWeek = currentWeek;
-        }
-
-        public EmployeeAssignment[] getEmployeeAssignments() {
-            return employeeAssignments;
-        }
-
-        public EmployeeAssignment[] setEmployeeAssignments(EmployeeAssignment[] employeeAssignments) {
-            this.employeeAssignments = employeeAssignments;
-        }
-
-        public String getEndDate() {
-            return endDate;
-        }
-
-        public void setEndDate(String endDate) {
-            this.endDate = endDate;
-        }
-
-        public int getGoodGrade() {
-            return goodGrade;
-        }
-
-        public void setGoodGrade(int goodGrade) {
-            this.goodGrade = goodGrade;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getLocation() {
-            return location;
-        }
-
-        public void setLocation(String location) {
-            this.location = location;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public int getPassingGrade() {
-            return passingGrade;
-        }
-
-        public void setPassingGrade(int passingGrade) {
-            this.passingGrade = passingGrade;
-        }
-
-        public String getSkill() {
-            return skill;
-        }
-
-        public void setSkill(String skill) {
-            this.skill = skill;
-        }
-
-        public String getStartDate() {
-            return startDate;
-        }
-
-        public void setStartDate(String startDate) {
-            this.startDate = startDate;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-}
-
-class AssociateAssignment{
-    private boolean active;
-    private Associate associate;
-    private Batch batch;
-    private String endDate;
-    private String startDate;
-    private String trainingStatus;
-
-    public AssociateAssignment(boolean active, Associate associate, Batch batch, String endDate, String startDate, String trainingStatus) {
-        this.active = active;
-        this.associate = associate;
-        this.batch = batch;
-        this.endDate = endDate;
-        this.startDate = startDate;
-        this.trainingStatus = trainingStatus;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public Associate getAssociate() {
-        return associate;
-    }
-
-    public void setAssociate(Associate associate) {
-        this.associate = associate;
-    }
-
-    public Batch getBatch() {
-        return batch;
-    }
-
-    public void setBatch(Batch batch) {
-        this.batch = batch;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getTrainingStatus() {
-        return trainingStatus;
-    }
-
-    public void setTrainingStatus(String trainingStatus) {
-        this.trainingStatus = trainingStatus;
+    @Override
+    public String toString() {
+        return "Associate{" +
+                "email='" + email + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", flag=" + flag +
+                ", lastname='" + lastname + '\'' +
+                ", salesforceId=" + salesforceId +
+                ", trainingAssignments=" + trainingAssignments +
+                '}';
     }
 }

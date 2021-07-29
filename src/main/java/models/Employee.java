@@ -15,6 +15,10 @@ public class Employee {
         this.trainingBatches = trainingBatches;
     }
 
+    public Employee() {
+
+    }
+
     public String getEmail() {
         return email;
     }
