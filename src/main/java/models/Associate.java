@@ -5,6 +5,7 @@ public class Associate {
     private String lastname;
     private String email;
     private String salesforceId;
+    private String password;
 //    private String flag;
 
     public Associate(String firstname, String lastname, String email, String salesforceId) {
@@ -44,6 +45,14 @@ public class Associate {
 
     public void setSalesforceId(String salesforceId) {
         this.salesforceId = salesforceId;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+    
+    public void setPassword(String password){
+        this.password = password;
     }
 
     @Override

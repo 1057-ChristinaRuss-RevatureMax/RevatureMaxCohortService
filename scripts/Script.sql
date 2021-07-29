@@ -9,7 +9,8 @@ create table associate(
     salesforceId varchar(10) primary key not null, 
     firstname varchar(20) not null,
     lastname varchar(20) not null,
-    email varchar(40)
+    email varchar(40),
+    pswrd varchar(40)
 );
 
 
@@ -27,7 +28,8 @@ create table employee (
     salesforceId varchar(10) primary key not null, 
     firstname varchar(20) not null,
     lastname varchar(20) not null,
-    email varchar(40)
+    email varchar(40),
+    pswrd varchar(40)
 );
 
 

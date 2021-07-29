@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RevatureMaxCohortService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RevatureMaxCohortService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AssociateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AssociateDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AssociateDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AssociateDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Associate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Associate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/EmployeePortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/EmployeePortfolio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +57,11 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService\src\main\java" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService\src\main\java" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -122,6 +126,12 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="2533" y="430" key="#com.intellij.ide.util.MemberChooser" timestamp="1627585758870">
+      <screen x="1440" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2533" y="430" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/1440.0.2560.1440@1440.0.2560.1440" timestamp="1627585758870" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -133,6 +143,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/controllers/userController.java</url>
           <line>34</line>
           <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/models/EmployeePortfolio.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
