@@ -10,9 +10,9 @@ import config.ResourceClosers;
 import models.Associate;
 import models.AssociateDto;
 
-public class AssociateDaoImpl implements AssociateDao {
+public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 
-    public AssociateDaoImpl() {
+    public AssociatePortfolioDaoImpl() {
 		
     }
     
@@ -22,7 +22,7 @@ public class AssociateDaoImpl implements AssociateDao {
         PreparedStatement stmt = null;
         try {
 			conn = ConnectionConfig.getConnection();
-			final String SQL = "update associate set bio = ? where salesforceId = ?";
+			final String SQL = "update associate_portfolio set bio = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, bio);
 			stmt.setString(2, salesforceId);
@@ -42,7 +42,7 @@ public class AssociateDaoImpl implements AssociateDao {
         PreparedStatement stmt = null;
         try {
 			conn = ConnectionConfig.getConnection();
-			final String SQL = "update associate set preference = ? where salesforceId = ?";
+			final String SQL = "update associate_portfolio set preference = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, preference);
 			stmt.setString(2, salesforceId);
@@ -61,7 +61,7 @@ public class AssociateDaoImpl implements AssociateDao {
         PreparedStatement stmt = null;
         try {
 			conn = ConnectionConfig.getConnection();
-			final String SQL = "update associate set favorite_technologies = ? where salesforceId = ?";
+			final String SQL = "update associate_portfolio set favorite_technologies = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, technologies);
 			stmt.setString(2, salesforceId);

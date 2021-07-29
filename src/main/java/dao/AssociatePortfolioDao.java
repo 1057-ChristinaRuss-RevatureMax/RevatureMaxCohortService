@@ -1,7 +1,7 @@
 package dao;
 import models.Associate;
 
-public interface AssociateDao{
+public interface AssociatePortfolioDao{
 
     void updateBio(String salesforceId, String bio);
 
