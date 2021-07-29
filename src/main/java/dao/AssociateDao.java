@@ -4,6 +4,8 @@ import models.Associate;
 
 public interface AssociateDao {
 
-    void createOne(String salesforceId, String firstName, String lastName, String email, String pass_word);
+    void createAssociate(String salesforceId, String firstName, String lastName, String email, String pass_word);
+    Associate getAssociateBySalesforce(String salesforceId);
+    Associate getAssociateByEmail(String email);
 
 }

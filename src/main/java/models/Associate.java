@@ -8,6 +8,10 @@ public class Associate {
     private String password;
 //    private String flag;
 
+    public Associate() {
+
+    }
+
     public Associate(String firstname, String lastname, String email, String salesforceId) {
         this.firstname = firstname;
         this.lastname = lastname;
