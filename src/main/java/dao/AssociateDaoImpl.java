@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import dbconfig.ConnectionConfig;
-import dbconfig.ResourceClosure;
+import config.ConnectionConfig;
+import config.ResourceClosers;
 import models.Associate;
 import models.AssociateDto;
 
@@ -31,8 +31,8 @@ public class AssociateDaoImpl implements AssociateDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			ResourceClosure.closeConnection(conn);
-			ResourceClosure.closeStatement(stmt);
+			ResourceClosers.closeConnection(conn);
+			ResourceClosers.closeStatement(stmt);
 		}
         
     }
@@ -51,8 +51,8 @@ public class AssociateDaoImpl implements AssociateDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			ResourceClosure.closeConnection(conn);
-			ResourceClosure.closeStatement(stmt);
+			ResourceClosers.closeConnection(conn);
+			ResourceClosers.closeStatement(stmt);
 		}
     }
     @Override
@@ -70,8 +70,8 @@ public class AssociateDaoImpl implements AssociateDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			ResourceClosure.closeConnection(conn);
-			ResourceClosure.closeStatement(stmt);
+			ResourceClosers.closeConnection(conn);
+			ResourceClosers.closeStatement(stmt);
 		}
     }
 
