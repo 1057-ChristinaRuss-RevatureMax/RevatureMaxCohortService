@@ -11,8 +11,16 @@ public class Associate {
     private AssociateAssignment[] associateAssignments;
     private String password;
 
+<<<<<<< HEAD
     public Associate(String email, String firstname, Flag flag, String lastname, String salesforceId, AssociateAssignment[] associateAssignments) {
         this.email = email;
+=======
+    public Associate() {
+
+    }
+
+    public Associate(String firstname, String lastname, String email, String salesforceId) {
+>>>>>>> made Associate dao with impl and few get methods
         this.firstname = firstname;
         this.flag = flag;
         this.lastname = lastname;
