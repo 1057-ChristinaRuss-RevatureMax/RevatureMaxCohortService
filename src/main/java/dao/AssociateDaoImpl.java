@@ -1,6 +1,6 @@
 package dao;
 
-import config.ConnectionConfig;
+import config.RDSConnectionConfig;
 import config.ResourceClosers;
 import models.Associate;
 import java.sql.Connection;
@@ -21,8 +21,8 @@ public class AssociateDaoImpl implements AssociateDao {
         PreparedStatement stmt = null;
 
         try {
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "insert into associates values(?, ?, ?, ?, ?)";
+            conn = RDSConnectionConfig.getConnection();
+            final String SQL = "insert into associate values (?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, salesforceId);
             stmt.setString(2, firstName);
