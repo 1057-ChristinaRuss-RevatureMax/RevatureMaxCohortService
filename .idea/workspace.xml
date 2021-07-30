@@ -85,6 +85,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Revature.Main" />
+      <module name="RevatureMaxCohortService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Revature.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="RevatureMaxCohortService" />
@@ -116,6 +129,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.app" />
       </list>
     </recent_temporary>
