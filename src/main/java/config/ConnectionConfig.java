@@ -13,9 +13,9 @@ public class ConnectionConfig {
 
             String hostname =  "localhost";
             String port = "5432";
-            String userName = "#######";
-            String password = "########";
-            String dbName = "#########";
+            String userName = "######";
+            String password = "#########";
+            String dbName = "##########";
 
             // Parameters for setting up the jdbcURL loaded in to connect to database currently set as postgres (anyone can access)
             String jdbcUrl = "jdbc:postgresql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
