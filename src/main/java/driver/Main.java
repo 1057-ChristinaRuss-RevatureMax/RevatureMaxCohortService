@@ -8,7 +8,7 @@ import config.ApiDatabaseConfig;
 public class Main {
     public static void main(String[] args) {
         //Javalin app = Javalin.create().start(9001);
-        ApiDatabaseConfig.initAssociates();
+//        ApiDatabaseConfig.initAssociates();
 
         Javalin app = JavalinConfig.getApp(9001);
 
