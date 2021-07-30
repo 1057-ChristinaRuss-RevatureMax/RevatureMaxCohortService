@@ -12,9 +12,5 @@ public class Main {
 //        ApiDatabaseConfig.initAssociates();
         FrontController fc = new FrontController(app);
     }
-<<<<<<< HEAD
 }
 
-=======
-}
->>>>>>> made Associate dao with impl and few get methods
