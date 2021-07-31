@@ -1,19 +1,24 @@
 package models;
 
 public class AssociateAssignment {
-        private boolean active;
-        private Associate associate;
-        private String endDate;
-        private String startDate;
-        private String trainingStatus;
+    private boolean active;
+    private Associate associate;
+    private Batch batch;
+    private String endDate;
+    private String startDate;
+    private String trainingStatus;
 
-        public AssociateAssignment(boolean active, Associate associate, String endDate, String startDate, String trainingStatus) {
-            this.active = active;
-            this.associate = associate;
-            this.endDate = endDate;
-            this.startDate = startDate;
-            this.trainingStatus = trainingStatus;
-        }
+    public AssociateAssignment(boolean active, Associate associate, Batch batch, String endDate, String startDate, String trainingStatus) {
+        this.active = active;
+        this.associate = associate;
+        this.batch = batch;
+        this.endDate = endDate;
+        this.startDate = startDate;
+        this.trainingStatus = trainingStatus;
+    }
+
+    public AssociateAssignment() {
+    }
 
     public boolean isActive() {
         return active;
@@ -29,6 +34,14 @@ public class AssociateAssignment {
 
     public void setAssociate(Associate associate) {
         this.associate = associate;
+    }
+
+    public Batch getBatch() {
+        return batch;
+    }
+
+    public void setBatch(Batch batch) {
+        this.batch = batch;
     }
 
     public String getEndDate() {
@@ -57,12 +70,13 @@ public class AssociateAssignment {
 
     @Override
     public String toString() {
-        return "{" +
-                "'active':'" + active +
-                ", 'associate':'" + associate +
-                ", 'endDate=':'" + endDate + '\'' +
-                ", 'startDate=':'" + startDate + '\'' +
-                ", 'trainingStatus':'" + trainingStatus + '\'' +
+        return "AssociateAssignment{" +
+                "active=" + active +
+                ", associate=" + associate +
+                ", batch=" + batch +
+                ", endDate='" + endDate + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", trainingStatus='" + trainingStatus + '\'' +
                 '}';
     }
 }

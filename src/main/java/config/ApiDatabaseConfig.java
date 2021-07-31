@@ -13,7 +13,7 @@ public class ApiDatabaseConfig {
         AssociateDaoImpl db = new AssociateDaoImpl();
         ArrayList userList = new ArrayList<Associate>();
         String parambody = apiDAOimpl.getAllUsers();
-        userList = apiUtils.JSONconvert(parambody);
+        userList = apiUtils.JSONConvertAssociate(parambody);
 
 
         //void createOne(String salesforceId, String firstName, String lastName, String email, String pass_word);
