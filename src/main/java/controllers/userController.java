@@ -27,7 +27,7 @@ public class userController {
                 LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
                 context.sessionAttribute("session_username", username);
                 context.json("{Success: login successful}").status(200);
-                context.redirect("/home");
+                context.redirect("/associateHome");
             }
             else {
                 context.sessionAttribute("session_username", username);
@@ -42,10 +42,22 @@ public class userController {
         }
     }
 
-    public static void home(Context context) {
+    private static boolean validUser(String username){
+        boolean validation = userservice.checkSession(username);
+        return validation;
+    }
+
+    public static void associateHome(Context context) {
         String username = context.sessionAttribute("session_username");
-        LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
-        context.json("{Success: login successful} Now Home" + " " + username).status(200);
+        boolean validation = userController.validUser(username);
+        if (validation) {
+            LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
+            context.json("{Success: login successful} Now Home" + " " + username).status(200);
+            context.render("/AssociateDashboard/associate-dashboard.html");
+        }
+        else {
+            context.redirect("/login");
+        }
     }
 
     public static void logout(Context context){

@@ -7,12 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 
 import config.ConnectionConfig;
-import config.LoggerConfig;
-import config.RDSConnectionConfig;
 import config.ResourceClosers;
 
 
@@ -44,6 +40,35 @@ public class apiDAOimpl implements apiDAO{
             result = stmt.executeQuery();
 
             boolean exists = result.next();
+
+            return exists;
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkSession(String username) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet result = null;
+
+        try {
+            //Establish the connection to the DB
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "SELECT email from associate where email=?";
+            stmt = conn.prepareStatement(SQL);
+
+            stmt.setString(1, username);
+
+            result = stmt.executeQuery();
+
+            Boolean exists = result.next();
 
             return exists;
 

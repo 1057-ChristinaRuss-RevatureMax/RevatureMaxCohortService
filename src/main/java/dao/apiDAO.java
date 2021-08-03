@@ -7,4 +7,5 @@ import java.util.Map;
 
 public interface apiDAO {
     boolean loginUser(String username, String password);
+    boolean checkSession(String username);
 }

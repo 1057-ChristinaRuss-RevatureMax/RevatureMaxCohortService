@@ -15,7 +15,7 @@ public class Dispatcher {
         app.post("/login", userController::loginUser);
 
         // Associate Home Page Controls
-        app.get("/home", userController::home);
+        app.get("/associateHome", userController::associateHome);
 //        app.get("/associate", userController::
 //        trainer view/
 //        edit profile trainer
@@ -25,7 +25,7 @@ public class Dispatcher {
 //                associate-dashboard
 //                        trainer-dashboard
 //                                trainer-batch-view
-
+//        app.get("/associate/<id>", userController::associateProfile);
 
         // invalid credentials on login
         app.get("/invalid", ctx -> {

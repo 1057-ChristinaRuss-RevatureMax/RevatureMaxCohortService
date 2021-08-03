@@ -17,6 +17,11 @@ public class userServiceImpl implements userService {
 
         return this.apidao.loginUser(username, password);
     }
+
+    @Override
+    public boolean checkSession(String username){
+        return this.apidao.checkSession(username);
+    }
 }
 
 //    @Override

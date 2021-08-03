@@ -22,7 +22,6 @@ public class ConnectionConfig {
             // jdbc setup for connection url to pass as a whole
             con = DriverManager.getConnection(jdbcUrl);
             // store connection to database in a variable
-            System.out.println("Connection successful");
             // if connection passes we print out "connection successful" can be removed in the future (still in for testing cases)
             return con;
         } catch (ClassNotFoundException | SQLException e) {

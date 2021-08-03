@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/Script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ConnectionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/JavalinConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/JavalinConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/apiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/apiDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontcontroller/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontcontroller/Dispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/userService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/userServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/ConnectionConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/ConnectionConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/JavalinConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/JavalinConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/userController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/apiDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/apiDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/apiDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/apiDAOimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/frontcontroller/Dispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/frontcontroller/Dispatcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/userService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/userServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/userServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
