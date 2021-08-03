@@ -14,6 +14,25 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 
     public AssociatePortfolioDaoImpl() {
 		
+	}
+	
+	public void createOne(String salesforceId){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+			conn = ConnectionConfig.getConnection();
+			final String SQL = "Insert INTO associate_portfolio values ?";
+			stmt = conn.prepareStatement(SQL);
+			stmt.setString(1, salesforceId);
+			stmt.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			ResourceClosers.closeConnection(conn);
+			ResourceClosers.closeStatement(stmt);
+		}
+        
     }
     
     @Override

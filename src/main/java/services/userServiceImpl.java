@@ -1,5 +1,6 @@
 package services;
 
+import dao.AssociateDaoImpl;
 import dao.apiDAO;
 import dao.apiDAOimpl;
 import models.Associate;
@@ -7,9 +8,15 @@ import models.Associate;
 public class userServiceImpl implements userService {
 
     apiDAO apidao;
+    AssociateDaoImpl associatedao;
 
     public userServiceImpl() {
         this.apidao = new apiDAOimpl();
+        this.associatedao = new AssociateDaoImpl();
+    }
+    @Override
+    public String getSalesForceId(String email){
+        return("test");
     }
 
     @Override
@@ -17,6 +24,12 @@ public class userServiceImpl implements userService {
 
         return this.apidao.loginUser(username, password);
     }
+    @Override
+    public void editUser(String salesforceId, String firstname, String lastname, String email, String bio, String favoriteTech, String preference){
+
+
+    }
+
 }
 
 //    @Override
