@@ -17,10 +17,10 @@ public class apiUtils {
             Associate associate = new Associate();
             associate.setEmail(jsonObject.getString("email"));
             associate.setFirstname(jsonObject.getString("firstName"));
-            associate.setFlag(parseSubFlag(jsonObject, "flag"));
+//            associate.setFlag(parseSubFlag(jsonObject, "flag"));
             associate.setLastname(jsonObject.getString("lastName"));
             associate.setSalesforceId(jsonObject.getString("salesforceId"));
-            associate.setAssociateAssignments(parseSubAssociateAssignment(jsonObject, "trainingAssignments", false));
+//            associate.setAssociateAssignments(parseSubAssociateAssignment(jsonObject, "trainingAssignments", false));
             userList.add(associate);
         }
         return userList;

@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import config.ConnectionConfig;
 import config.LoggerConfig;
 import config.RDSConnectionConfig;
 import config.ResourceClosers;
@@ -33,8 +34,8 @@ public class apiDAOimpl implements apiDAO{
 
         try {
             //Establish the connection to the DB
-            conn = RDSConnectionConfig.getConnection();
-            final String SQL = "SELECT email, pass_word FROM associate where email=? AND pass_word=?";
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "SELECT email, pswrd FROM associate where email=? AND pswrd=?";
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, username);
@@ -73,7 +74,6 @@ public class apiDAOimpl implements apiDAO{
 
             int status = connection.getResponseCode();
             System.out.println(status);
-
 
             if (status > 299) {
                 reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));

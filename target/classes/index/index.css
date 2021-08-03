@@ -1,7 +1,7 @@
 @import url('../revature-styles/Futura-Std-Medium.otf');
 
 html {
-  background-image: linear-gradient(#f26925, #474c55);
+  background: linear-gradient( white ,#F26925);
 }
 
 body {
@@ -84,12 +84,12 @@ input[type=button], input[type=submit], input[type=reset] {
   background-color: #474C55;
   border: none;
   color: white;
-  padding: 15px 80px;
+  padding: 16px 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 14px;
   font-family: "Futura Std Medium";
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
@@ -121,11 +121,10 @@ input[type=text], input[type=password] {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  text-transform: uppercase;
-  font-size: 13px;
+  font-size: 16px;
   font-family: "Futura Std Medium";
   margin: 5px;
-  width: 85%;
+  width: 75%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;

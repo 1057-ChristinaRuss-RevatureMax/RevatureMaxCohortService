@@ -12,8 +12,8 @@ public class RDSConnectionConfig {
 	public static Connection getConnection() throws SQLException {
 
 		return DriverManager.getConnection(
-			System.getenv("db_url"), 
-			System.getenv("db_username"),
+			System.getenv("db_name"),
+			System.getenv("db_name"),
 			System.getenv("db_password"));
 
 
