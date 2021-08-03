@@ -6,18 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RevatureMaxCohortService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RevatureMaxCohortService.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/apiUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/apiUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/driver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/app.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Associate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Associate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/AssociateAssignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/AssociateAssignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/AssociateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/AssociateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Batch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Batch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/EmployeeAssignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/EmployeeAssignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Flag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Flag.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
