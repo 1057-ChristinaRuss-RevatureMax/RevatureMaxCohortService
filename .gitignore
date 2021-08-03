@@ -65,5 +65,8 @@ local.properties
 .idea/workspace.xml
 .idea/workspace.xml
 .idea/workspace.xml
+<<<<<<< HEAD
 target/
 .idea
+=======
+>>>>>>> 09de201 (gitignore update)
