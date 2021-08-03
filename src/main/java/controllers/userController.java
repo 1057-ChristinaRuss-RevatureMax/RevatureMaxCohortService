@@ -3,12 +3,8 @@ package controllers;
 import config.LoggerConfig;
 import io.javalin.http.Context;
 
-import driver.Main;
-import org.apache.commons.io.FileUtils;
 import services.userService;
 import services.userServiceImpl;
-
-import java.util.HashMap;
 
 public class userController {
 
@@ -31,6 +27,7 @@ public class userController {
                 LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
                 context.sessionAttribute("session_username", username);
                 context.json("{Success: login successful}").status(200);
+                context.redirect("/home");
             }
             else {
                 context.sessionAttribute("session_username", username);
@@ -43,5 +40,16 @@ public class userController {
         } else {
             context.render("/index/index.html");
         }
+    }
+
+    public static void home(Context context) {
+        String username = context.sessionAttribute("session_username");
+        LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
+        context.json("{Success: login successful} Now Home" + " " + username).status(200);
+    }
+
+    public static void logout(Context context){
+        context.req.getSession().invalidate();
+        context.redirect("/login");
     }
 }
