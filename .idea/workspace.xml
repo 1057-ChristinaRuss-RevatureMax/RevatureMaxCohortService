@@ -26,23 +26,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/ApiDatabaseConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/RDSConnectionConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/user/Associate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/EmployeePortfolio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/ApiDatabaseConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/RDSConnectionConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/controllers/Controller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/dao/dao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/dbconfig/ConnectionConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/frontcontroller/fcontroller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/user/service.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/JavalinConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/JavalinConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/apiUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/apiUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/userController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/driver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontcontroller/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontcontroller/Dispatcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Associate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Associate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/AssociateAssignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/AssociateAssignment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/AssociateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/AssociateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Batch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Batch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/EmployeeAssignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/EmployeeAssignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/EmployeePortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/EmployeePortfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Flag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Flag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/index/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/userController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/AssociateDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/AssociateDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/AssociateDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/AssociateDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/driver/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/driver/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/frontcontroller/Dispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/frontcontroller/Dispatcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Associate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Associate.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,10 +97,11 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService\src\main\resources" />
       <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -137,6 +146,53 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

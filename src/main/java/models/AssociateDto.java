@@ -10,7 +10,6 @@ public class AssociateDto {
     private String name;
     private String trainingStatus;
 
-
     public AssociateDto(String batchId, String email, FlagDto flag, String id, String name, String trainingStatus) {
         this.batchId = batchId;
         this.email = email;
@@ -23,7 +22,6 @@ public class AssociateDto {
     public AssociateDto() {
 
     }
-
 
     public String getBatchId() {
         return batchId;
@@ -41,13 +39,12 @@ public class AssociateDto {
         this.email = email;
     }
 
-
     public FlagDto getFlag() {
         return flag;
     }
 
     public void setFlag(FlagDto flag) {
-
+        this.flag = flag;
     }
 
     public String getId() {

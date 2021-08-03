@@ -7,7 +7,6 @@ public class Employee {
     private String firstName;
     private String lastName;
     private EmployeeAssignment[] trainingBatches;
-    private String password;    
 
     public Employee(String email, String firstName, String lastName, EmployeeAssignment[] trainingBatches) {
         this.email = email;
@@ -44,14 +43,6 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public void setPassword(String password){
-        this.password = password;
-    }
-
-    public String getPassword(String password){
-        return password;
-    }
-
     public EmployeeAssignment[] getTrainingBatches() {
         return trainingBatches;
     }
@@ -59,7 +50,6 @@ public class Employee {
     public void setTrainingBatches(EmployeeAssignment[] trainingBatches) {
         this.trainingBatches = trainingBatches;
     }
-
 
     @Override
     public String toString() {
@@ -71,4 +61,3 @@ public class Employee {
                 '}';
     }
 }
-

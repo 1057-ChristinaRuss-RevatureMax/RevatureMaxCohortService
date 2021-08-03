@@ -1,6 +1,5 @@
 package models;
 
-
 import java.util.Arrays;
 
 public class Associate {
@@ -25,6 +24,13 @@ public class Associate {
 
     }
 
+    public Associate(String email, String firstname, Flag flag, String lastname, String salesforceId) {
+        this.email = email;
+        this.firstname = firstname;
+        this.flag = flag;
+        this.lastname = lastname;
+        this.salesforceId = salesforceId;
+    }
 
     public String getFirstname() {
         return firstname;
@@ -49,7 +55,7 @@ public class Associate {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     public String getPassword(){
         return password;
     }
@@ -86,7 +92,7 @@ public class Associate {
                 ", flag=" + flag +
                 ", lastname='" + lastname + '\'' +
                 ", salesforceId='" + salesforceId + '\'' +
-                ", associateAssignments=" + Arrays.toString(associateAssignments) + '\'' +
+                ", associateAssignments=" + Arrays.toString(associateAssignments) +
                 '}';
     }
 }

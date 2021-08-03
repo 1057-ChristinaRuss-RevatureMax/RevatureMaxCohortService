@@ -19,7 +19,7 @@ public class JavalinConfig {
 //     */
     public static Javalin getApp(int port) {
         Javalin app = Javalin.create(config -> config.sessionHandler(SessionConfig::fileSessionHandler)
-//                .addStaticFiles("src/main/resources/404", Location.EXTERNAL)
+//                .addStaticFiles("src/main/resources/home", Location.EXTERNAL)
                 .addStaticFiles("src/main/resources/index", Location.EXTERNAL)
                 .enableCorsForOrigin("127.0.0.1")
                 .server(()->{
