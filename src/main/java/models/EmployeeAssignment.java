@@ -2,49 +2,53 @@ package models;
 
 
 public class EmployeeAssignment {
-        private Batch batch;
-        private String deletedAt;
-        private Employee employee;
-        private String role;
+    private Batch batch;
+    private String deletedAt;
+    private Employee employee;
+    private String role;
 
-        public EmployeeAssignment(Batch batch, String deletedAt, Employee employee, String role) {
-            this.batch = batch;
-            this.deletedAt = deletedAt;
-            this.employee = employee;
-            this.role = role;
-        }
+    public EmployeeAssignment(Batch batch, String deletedAt, Employee employee, String role) {
+        this.batch = batch;
+        this.deletedAt = deletedAt;
+        this.employee = employee;
+        this.role = role;
+    }
 
-        public Batch getBatch() {
-            return batch;
-        }
+    public EmployeeAssignment() {
 
-        public void setBatch(Batch batch) {
-            this.batch = batch;
-        }
+    }
 
-        public String getDeletedAt() {
-            return deletedAt;
-        }
+    public Batch getBatch() {
+        return batch;
+    }
 
-        public void setDeletedAt(String deletedAt) {
-            this.deletedAt = deletedAt;
-        }
+    public void setBatch(Batch batch) {
+        this.batch = batch;
+    }
 
-        public Employee getEmployee() {
-            return employee;
-        }
+    public String getDeletedAt() {
+        return deletedAt;
+    }
 
-        public void setEmployee(Employee employee) {
-            this.employee = employee;
-        }
+    public void setDeletedAt(String deletedAt) {
+        this.deletedAt = deletedAt;
+    }
 
-        public String getRole() {
-            return role;
-        }
+    public Employee getEmployee() {
+        return employee;
+    }
 
-        public void setRole(String role) {
-            this.role = role;
-        }
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     @Override
     public String toString() {

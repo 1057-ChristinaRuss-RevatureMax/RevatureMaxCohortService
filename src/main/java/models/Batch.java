@@ -3,35 +3,38 @@ package models;
 import java.util.Arrays;
 
 public class Batch {
-        private AssociateAssignment[] associateAssignments;
-        private String batchId;
-        private int currentWeek;
-        private models.EmployeeAssignment[] employeeAssignments;
-        private String endDate;
-        private int goodGrade;
-        private int id;
-        private String location;
-        private String name;
-        private int passingGrade;
-        private String skill;
-        private String startDate;
-        private String type;
+    private AssociateAssignment[] associateAssignments;
+    private String batchId;
+    private int currentWeek;
+    private models.EmployeeAssignment[] employeeAssignments;
+    private String endDate;
+    private int goodGrade;
+    private int id;
+    private String location;
+    private String name;
+    private int passingGrade;
+    private String skill;
+    private String startDate;
+    private String type;
 
-        public Batch(AssociateAssignment[] associateAssignments, String batchId, int currentWeek, models.EmployeeAssignment[] employeeAssignments, String endDate, int goodGrade, int id, String location, String name, int passingGrade, String skill, String startDate, String type) {
-            this.associateAssignments = associateAssignments;
-            this.batchId = batchId;
-            this.currentWeek = currentWeek;
-            this.employeeAssignments = employeeAssignments;
-            this.endDate = endDate;
-            this.goodGrade = goodGrade;
-            this.id = id;
-            this.location = location;
-            this.name = name;
-            this.passingGrade = passingGrade;
-            this.skill = skill;
-            this.startDate = startDate;
-            this.type = type;
-        }
+    public Batch(AssociateAssignment[] associateAssignments, String batchId, int currentWeek, models.EmployeeAssignment[] employeeAssignments, String endDate, int goodGrade, int id, String location, String name, int passingGrade, String skill, String startDate, String type) {
+        this.associateAssignments = associateAssignments;
+        this.batchId = batchId;
+        this.currentWeek = currentWeek;
+        this.employeeAssignments = employeeAssignments;
+        this.endDate = endDate;
+        this.goodGrade = goodGrade;
+        this.id = id;
+        this.location = location;
+        this.name = name;
+        this.passingGrade = passingGrade;
+        this.skill = skill;
+        this.startDate = startDate;
+        this.type = type;
+    }
+
+    public Batch() {
+    }
 
     public AssociateAssignment[] getAssociateAssignments() {
         return associateAssignments;
