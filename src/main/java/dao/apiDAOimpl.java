@@ -11,8 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import config.LoggerConfig;
-import config.ConnectionConfig;
+import config.RDSConnectionConfig;
 import config.ResourceClosers;
+
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,8 +33,8 @@ public class apiDAOimpl implements apiDAO{
 
         try {
             //Establish the connection to the DB
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "SELECT user_name, user_pass FROM Revature_users where user_name=? AND user_pass=?";
+            conn = RDSConnectionConfig.getConnection();
+            final String SQL = "SELECT email, pass_word FROM associate where email=? AND pass_word=?";
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, username);

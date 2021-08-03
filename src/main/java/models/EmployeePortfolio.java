@@ -1,5 +1,4 @@
 package models;
-
 public class EmployeePortfolio {
     private String salesforceId;
     private String bio;

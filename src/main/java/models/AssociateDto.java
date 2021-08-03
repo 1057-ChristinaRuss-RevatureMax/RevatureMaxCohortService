@@ -5,12 +5,13 @@ import java.util.Arrays;
 public class AssociateDto {
     private String batchId;
     private String email;
-    private FlagDto[] flag;
+    private FlagDto flag;
     private String id;
     private String name;
     private String trainingStatus;
 
-    public AssociateDto(String batchId, String email, FlagDto[] flag, String id, String name, String trainingStatus) {
+
+    public AssociateDto(String batchId, String email, FlagDto flag, String id, String name, String trainingStatus) {
         this.batchId = batchId;
         this.email = email;
         this.flag = flag;
@@ -18,6 +19,11 @@ public class AssociateDto {
         this.name = name;
         this.trainingStatus = trainingStatus;
     }
+
+    public AssociateDto() {
+
+    }
+
 
     public String getBatchId() {
         return batchId;
@@ -35,12 +41,13 @@ public class AssociateDto {
         this.email = email;
     }
 
-    public FlagDto[] getFlag() {
+
+    public FlagDto getFlag() {
         return flag;
     }
 
-    public void setFlag(FlagDto[] flag) {
-        this.flag = flag;
+    public void setFlag(FlagDto flag) {
+
     }
 
     public String getId() {
@@ -72,7 +79,7 @@ public class AssociateDto {
         return "{" +
                 "batchId=':'" + batchId + '\'' +
                 ", email=':'" + email + '\'' +
-                ", flag=':'" + Arrays.toString(flag) +
+                ", flag=':'" + flag +
                 ", id=':'" + id + '\'' +
                 ", name=':'" + name + '\'' +
                 ", trainingStatus=':'" + trainingStatus + '\'' +
