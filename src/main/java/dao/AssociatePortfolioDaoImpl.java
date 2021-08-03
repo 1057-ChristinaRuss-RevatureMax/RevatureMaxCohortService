@@ -12,15 +12,34 @@ import models.AssociateDto;
 
 public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 
-	public AssociatePortfolioDaoImpl() {
-
+    public AssociatePortfolioDaoImpl() {
+		
 	}
-
-	@Override
-	public void updateBio(String salesforceId, String bio){
-		Connection conn = null;
-		PreparedStatement stmt = null;
-		try {
+	
+	public void createOne(String salesforceId){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+			conn = ConnectionConfig.getConnection();
+			final String SQL = "Insert INTO associate_portfolio values ?";
+			stmt = conn.prepareStatement(SQL);
+			stmt.setString(1, salesforceId);
+			stmt.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			ResourceClosers.closeConnection(conn);
+			ResourceClosers.closeStatement(stmt);
+		}
+        
+    }
+    
+    @Override
+    public void updateBio(String salesforceId, String bio){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
 			conn = ConnectionConfig.getConnection();
 			final String SQL = "update associate_portfolio set bio = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);

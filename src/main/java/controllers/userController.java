@@ -1,10 +1,21 @@
 package controllers;
 
+import org.json.JSONObject;
+import org.openqa.selenium.json.Json;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 import config.LoggerConfig;
 import io.javalin.http.Context;
 
+import driver.Main;
+import org.apache.commons.io.FileUtils;
 import services.userService;
 import services.userServiceImpl;
+import dao.AssociateDaoImpl;
+
+import java.util.HashMap;
 
 public class userController {
 
@@ -26,8 +37,12 @@ public class userController {
             if (username != null && password != null && login) {
                 LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
                 context.sessionAttribute("session_username", username);
+                context.sessionAttribute("salesforceId", userservice.getSalesForceId(username));
                 context.json("{Success: login successful}").status(200);
+<<<<<<< HEAD
                 context.redirect("/associateHome");
+=======
+>>>>>>> edit user
             }
             else {
                 context.sessionAttribute("session_username", username);
@@ -92,9 +107,27 @@ public class userController {
             context.redirect("/login");
         }
     }
+    public static void editUser(Context context){
+        if (context.method() == "POST") {
+            String firstname = null;
+            String lastname = null;
+            String email = null;
+            String bio = null;
+            String favorite_tech = null;
+            String preference = null;
+            String body = context.body();
+            
+            JsonObject bodyJson = new Gson().fromJson(body, JsonObject.class);
+            firstname = bodyJson.get("firstName").getAsString();
+            lastname = bodyJson.get("lastName").getAsString();
+            email = bodyJson.get("emailAddress").getAsString();
+            bio = bodyJson.get("bio").getAsString();
+            favorite_tech = bodyJson.get("favoriteTechnologies").getAsString();
+            preference = bodyJson.get("preference").getAsString();
 
-    public static void logout(Context context){
-        context.req.getSession().invalidate();
-        context.redirect("/login");
+
+
+        }
+
     }
 }
