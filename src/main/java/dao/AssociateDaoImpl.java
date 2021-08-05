@@ -23,7 +23,7 @@ public class AssociateDaoImpl implements AssociateDao {
         PreparedStatement stmt = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "insert into associate values(?, ?, ?, ?, ?) ON CONFLICT DO NOTHING";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, salesforceId);
@@ -48,7 +48,7 @@ public class AssociateDaoImpl implements AssociateDao {
         ResultSet set = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "select * from associate where salesforceId = ?";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, salesforceId);
@@ -77,7 +77,7 @@ public class AssociateDaoImpl implements AssociateDao {
         ResultSet set = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "select * from associate where email = ?";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, email);
@@ -103,7 +103,7 @@ public class AssociateDaoImpl implements AssociateDao {
         ResultSet set = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "Update associate set firstname = ? where salesforceId = ?";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, firstname);
@@ -122,7 +122,7 @@ public class AssociateDaoImpl implements AssociateDao {
         ResultSet set = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "Update associate set lastname = ? where salesforceId = ?";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, lastname);
@@ -141,7 +141,7 @@ public class AssociateDaoImpl implements AssociateDao {
         ResultSet set = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "Update associate set email = ? where salesforceId = ?";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, email);

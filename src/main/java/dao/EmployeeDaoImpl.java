@@ -17,7 +17,7 @@ public class EmployeeDaoImpl {
         PreparedStatement stmt = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "insert into employee values(?, ?, ?, ?, ?) ON CONFLICT DO NOTHING";
             stmt = conn.prepareStatement(SQL);
             stmt.setInt(1, salesforceId);
@@ -40,7 +40,7 @@ public class EmployeeDaoImpl {
         ResultSet set = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "Update employee set firstname = ? where salesforceId = ?";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, firstname);
@@ -59,7 +59,7 @@ public class EmployeeDaoImpl {
         ResultSet set = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "Update employee set lastname = ? where salesforceId = ?";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, lastname);
@@ -78,7 +78,7 @@ public class EmployeeDaoImpl {
         ResultSet set = null;
 
         try {
-            conn = RDSConnectionConfig.getConnection();
+            conn = ConnectionConfig.getConnection();
             final String SQL = "Update employee set email = ? where salesforceId = ?";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, email);
