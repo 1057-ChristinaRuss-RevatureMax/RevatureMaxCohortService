@@ -14,20 +14,15 @@ import config.ResourceClosers;
 import models.Associate;
 import models.AssociateDto;
 
-public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
-
-    public AssociatePortfolioDaoImpl() {
-		
-	}
-	@Override
-	public void createOne(String salesforceId) {
+public class EmployeePortfolioDao {
+    public void createOne(int salesforceId) {
 		Connection conn = null;
         PreparedStatement stmt = null;
         try {
 			conn = RDSConnectionConfig.getConnection();
-			final String SQL = "Insert into associate_portfolio values (?, NULL, NULL, NULL) ON CONFLICT DO nothing";
+			final String SQL = "Insert into employee_portfolio values (?, NULL, NULL, NULL) ON CONFLICT DO nothing";
 			stmt = conn.prepareStatement(SQL);
-			stmt.setString(1, salesforceId);
+			stmt.setInt(1, salesforceId);
 			stmt.execute();
 			
 		} catch (SQLException e) {
@@ -37,18 +32,16 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 			ResourceClosers.closeStatement(stmt);
 		}
 		
-	}
-    
-    @Override
-    public void updateBio(String salesforceId, String bio){
+    }
+    public void updateBio(int salesforceId, String bio){
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
 			conn = RDSConnectionConfig.getConnection();
-			final String SQL = "update associate_portfolio set bio = ? where salesforceId = ?";
+			final String SQL = "update employee_portfolio set bio = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, bio);
-			stmt.setString(2, salesforceId);
+			stmt.setInt(2, salesforceId);
 			stmt.execute();
 			
 		} catch (SQLException e) {
@@ -59,16 +52,16 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 		}
         
     }
-    @Override
-    public void updatePreference(String salesforceId, String preference){
+
+    public void updateTechnology(int salesforceId, String technology){
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
 			conn = RDSConnectionConfig.getConnection();
-			final String SQL = "update associate_portfolio set preference = ? where salesforceId = ?";
+			final String SQL = "update employee_portfolio set technology = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
-			stmt.setString(1, preference);
-			stmt.setString(2, salesforceId);
+			stmt.setString(1, technology);
+			stmt.setInt(2, salesforceId);
 			stmt.execute();
 			
 		} catch (SQLException e) {
@@ -78,16 +71,15 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 			ResourceClosers.closeStatement(stmt);
 		}
     }
-    @Override
-    public void updateFavoriteTechnologies(String salesforceId, String technologies){
+    public void updateLocation(int salesforceId, String location){
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
 			conn = RDSConnectionConfig.getConnection();
-			final String SQL = "update associate_portfolio set favorite_technologies = ? where salesforceId = ?";
+			final String SQL = "update employee_portfolio set trainer_location = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
-			stmt.setString(1, technologies);
-			stmt.setString(2, salesforceId);
+			stmt.setString(1, location);
+			stmt.setInt(2, salesforceId);
 			stmt.execute();
 			
 		} catch (SQLException e) {
