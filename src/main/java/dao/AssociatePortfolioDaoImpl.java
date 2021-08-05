@@ -24,7 +24,7 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 		Connection conn = null;
         PreparedStatement stmt = null;
         try {
-			conn = RDSConnectionConfig.getConnection();
+			conn = ConnectionConfig.getConnection();
 			final String SQL = "Insert into associate_portfolio values (?, NULL, NULL, NULL) ON CONFLICT DO nothing";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, salesforceId);
@@ -44,7 +44,7 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-			conn = RDSConnectionConfig.getConnection();
+			conn = ConnectionConfig.getConnection();
 			final String SQL = "update associate_portfolio set bio = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, bio);
@@ -74,8 +74,12 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
+<<<<<<< HEAD
 			conn = RDSConnectionConfig.getConnection();
 >>>>>>> edit employee and user
+=======
+			conn = ConnectionConfig.getConnection();
+>>>>>>> changer connection
 			final String SQL = "update associate_portfolio set preference = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, preference);
@@ -103,8 +107,12 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
+<<<<<<< HEAD
 			conn = RDSConnectionConfig.getConnection();
 >>>>>>> edit employee and user
+=======
+			conn = ConnectionConfig.getConnection();
+>>>>>>> changer connection
 			final String SQL = "update associate_portfolio set favorite_technologies = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, technologies);

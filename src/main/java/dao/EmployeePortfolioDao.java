@@ -19,7 +19,7 @@ public class EmployeePortfolioDao {
 		Connection conn = null;
         PreparedStatement stmt = null;
         try {
-			conn = RDSConnectionConfig.getConnection();
+			conn = ConnectionConfig.getConnection();
 			final String SQL = "Insert into employee_portfolio values (?, NULL, NULL, NULL) ON CONFLICT DO nothing";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setInt(1, salesforceId);
@@ -37,7 +37,7 @@ public class EmployeePortfolioDao {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-			conn = RDSConnectionConfig.getConnection();
+			conn = ConnectionConfig.getConnection();
 			final String SQL = "update employee_portfolio set bio = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, bio);
@@ -57,7 +57,7 @@ public class EmployeePortfolioDao {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-			conn = RDSConnectionConfig.getConnection();
+			conn = ConnectionConfig.getConnection();
 			final String SQL = "update employee_portfolio set technology = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, technology);
@@ -75,7 +75,7 @@ public class EmployeePortfolioDao {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-			conn = RDSConnectionConfig.getConnection();
+			conn = ConnectionConfig.getConnection();
 			final String SQL = "update employee_portfolio set trainer_location = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, location);
