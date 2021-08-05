@@ -53,6 +53,6 @@ public class Dispatcher {
             }
         });
 
-        app.get("/logout", userController::logout);
+        //app.get("/logout", userController::logout);
 }
 }

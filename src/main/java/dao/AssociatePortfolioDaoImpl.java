@@ -57,16 +57,6 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 			ResourceClosers.closeConnection(conn);
 			ResourceClosers.closeStatement(stmt);
 		}
-<<<<<<< HEAD
-
-	}
-	@Override
-	public void updatePreference(String salesforceId, String preference){
-		Connection conn = null;
-		PreparedStatement stmt = null;
-		try {
-			conn = ConnectionConfig.getConnection();
-=======
         
     }
     @Override
@@ -74,12 +64,7 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-<<<<<<< HEAD
-			conn = RDSConnectionConfig.getConnection();
->>>>>>> edit employee and user
-=======
 			conn = ConnectionConfig.getConnection();
->>>>>>> changer connection
 			final String SQL = "update associate_portfolio set preference = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, preference);
@@ -92,27 +77,13 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 			ResourceClosers.closeConnection(conn);
 			ResourceClosers.closeStatement(stmt);
 		}
-<<<<<<< HEAD
-	}
-	@Override
-	public void updateFavoriteTechnologies(String salesforceId, String technologies){
-		Connection conn = null;
-		PreparedStatement stmt = null;
-		try {
-			conn = ConnectionConfig.getConnection();
-=======
     }
     @Override
     public void updateFavoriteTechnologies(String salesforceId, String technologies){
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-<<<<<<< HEAD
-			conn = RDSConnectionConfig.getConnection();
->>>>>>> edit employee and user
-=======
 			conn = ConnectionConfig.getConnection();
->>>>>>> changer connection
 			final String SQL = "update associate_portfolio set favorite_technologies = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, technologies);

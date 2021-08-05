@@ -39,17 +39,14 @@ public class userController {
                 context.sessionAttribute("session_username", username);
                 //context.sessionAttribute("salesforceId", userservice.getSalesForceId(username));
                 context.json("{Success: login successful}").status(200);
-<<<<<<< HEAD
                 context.redirect("/associateHome");
-=======
->>>>>>> edit user
+
             }
             else {
                 context.sessionAttribute("session_username", username);
                 LoggerConfig.log(userController.class.getSimpleName(), "User login failed, username: " + username);
                 context.sessionAttribute("session_username", "invalid");
                 context.redirect("/login");
-
             }
 
         } else {
