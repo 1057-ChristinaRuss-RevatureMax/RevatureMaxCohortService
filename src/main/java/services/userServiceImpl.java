@@ -1,6 +1,7 @@
 package services;
 
 import dao.AssociateDaoImpl;
+import dao.AssociatePortfolioDaoImpl;
 import dao.apiDAO;
 import dao.apiDAOimpl;
 import models.Associate;
@@ -9,14 +10,18 @@ public class userServiceImpl implements userService {
 
     apiDAO apidao;
     AssociateDaoImpl associatedao;
+    AssociatePortfolioDaoImpl portfoliodao;
 
     public userServiceImpl() {
         this.apidao = new apiDAOimpl();
         this.associatedao = new AssociateDaoImpl();
+        this.portfoliodao = new AssociatePortfolioDaoImpl();
     }
     @Override
     public String getSalesForceId(String email){
-        return("test");
+        Associate associate = this.associatedao.getAssociateByEmail(email);
+        return associate.getSalesforceId();
+
     }
 
     @Override
@@ -26,8 +31,12 @@ public class userServiceImpl implements userService {
     }
     @Override
     public void editUser(String salesforceId, String firstname, String lastname, String email, String bio, String favoriteTech, String preference){
-
-
+        this.associatedao.updateAssociateFirstname(salesforceId, firstname);
+        this.associatedao.updateAssociateLastname(salesforceId, lastname);
+        this.associatedao.updateAssociateEmail(salesforceId, email);
+        this.portfoliodao.updateBio(salesforceId, bio);
+        this.portfoliodao.updatePreference(salesforceId, preference);
+        this.portfoliodao.updateFavoriteTechnologies(salesforceId, favoriteTech);
     }
 
 

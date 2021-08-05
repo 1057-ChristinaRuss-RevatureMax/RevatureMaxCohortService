@@ -17,10 +17,17 @@ public class apiUtils {
             Associate associate = new Associate();
             associate.setEmail(jsonObject.getString("email"));
             associate.setFirstname(jsonObject.getString("firstName"));
+<<<<<<< HEAD
 //            associate.setFlag(parseSubFlag(jsonObject, "flag"));
             associate.setLastname(jsonObject.getString("lastName"));
             associate.setSalesforceId(jsonObject.getString("salesforceId"));
 //            associate.setAssociateAssignments(parseSubAssociateAssignment(jsonObject, "trainingAssignments", false));
+=======
+            //associate.setFlag(parseSubFlag(jsonObject, "flag"));
+            associate.setLastname(jsonObject.getString("lastName"));
+            associate.setSalesforceId(jsonObject.getString("salesforceId"));
+            //associate.setAssociateAssignments(parseSubAssociateAssignment(jsonObject, "trainingAssignments", false));
+>>>>>>> edit employee and user
             userList.add(associate);
         }
         return userList;
@@ -98,7 +105,7 @@ public class apiUtils {
             employee.setEmail(jsonObject.getString("email"));
             employee.setFirstName(jsonObject.getString("firstName"));
             employee.setLastName(jsonObject.getString("lastName"));
-            employee.setTrainingBatches(parseSubEmployeeAssignment(jsonObject, "trainingBatches", false, false));
+            //employee.setTrainingBatches(parseSubEmployeeAssignment(jsonObject, "trainingBatches", false, false));
             employeeList.add(employee);
         }
         return employeeList;
