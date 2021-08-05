@@ -3,8 +3,12 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+
+import org.postgresql.shaded.com.ongres.scram.common.bouncycastle.pbkdf2.SHA256Digest;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import config.RDSConnectionConfig;
 import config.ConnectionConfig;
 import config.ResourceClosers;
 import models.Associate;
@@ -13,6 +17,25 @@ import models.AssociateDto;
 public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 
 	public AssociatePortfolioDaoImpl() {
+
+	}
+	@Override
+	public void createOne(String salesforceId) {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			conn = ConnectionConfig.getConnection();
+			final String SQL = "Insert into associate_portfolio values (?, NULL, NULL, NULL) ON CONFLICT DO nothing";
+			stmt = conn.prepareStatement(SQL);
+			stmt.setString(1, salesforceId);
+			stmt.execute();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			ResourceClosers.closeConnection(conn);
+			ResourceClosers.closeStatement(stmt);
+		}
 
 	}
 

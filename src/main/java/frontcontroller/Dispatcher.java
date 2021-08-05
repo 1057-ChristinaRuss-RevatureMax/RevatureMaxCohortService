@@ -1,6 +1,7 @@
 package frontcontroller;
 
 import controllers.userController;
+import controllers.employeeController;
 import io.javalin.Javalin;
 
 import config.LoggerConfig;
@@ -16,10 +17,9 @@ public class Dispatcher {
 
         // Associate Home Page Controls
         app.get("/associateHome", userController::associateHome);
-//        app.get("/associate", userController::
 //        trainer view/
-//        edit profile trainer
-//                edit profile associate
+        app.post("/associate/edit", userController::editUser);
+        app.post("/employee/edit", employeeController::editEmployee);
         app.get("/passwordchange", userController::passwordChange);
         app.post("/passwordchange", userController::passwordChange);
 //                associate-dashboard

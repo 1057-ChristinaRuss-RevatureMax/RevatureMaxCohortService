@@ -17,10 +17,10 @@ public class apiUtils {
             Associate associate = new Associate();
             associate.setEmail(jsonObject.getString("email"));
             associate.setFirstname(jsonObject.getString("firstName"));
-//            associate.setFlag(parseSubFlag(jsonObject, "flag"));
+            //associate.setFlag(parseSubFlag(jsonObject, "flag"));
             associate.setLastname(jsonObject.getString("lastName"));
             associate.setSalesforceId(jsonObject.getString("salesforceId"));
-//            associate.setAssociateAssignments(parseSubAssociateAssignment(jsonObject, "trainingAssignments", false));
+            //associate.setAssociateAssignments(parseSubAssociateAssignment(jsonObject, "trainingAssignments", false));
             userList.add(associate);
         }
         return userList;
@@ -98,7 +98,7 @@ public class apiUtils {
             employee.setEmail(jsonObject.getString("email"));
             employee.setFirstName(jsonObject.getString("firstName"));
             employee.setLastName(jsonObject.getString("lastName"));
-            employee.setTrainingBatches(parseSubEmployeeAssignment(jsonObject, "trainingBatches", false, false));
+            //employee.setTrainingBatches(parseSubEmployeeAssignment(jsonObject, "trainingBatches", false, false));
             employeeList.add(employee);
         }
         return employeeList;
@@ -125,9 +125,9 @@ public class apiUtils {
         JSONArray jsonArray = new JSONArray(paramBody);
         JSONObject jsonObject = jsonArray.getJSONObject(0);
         flagList.add(new Flag(
-            jsonObject.getString("content"),
-            jsonObject.getInt("id"),
-            jsonObject.getString("type")
+                jsonObject.getString("content"),
+                jsonObject.getInt("id"),
+                jsonObject.getString("type")
         ));
         return flagList;
     }
@@ -137,10 +137,10 @@ public class apiUtils {
         JSONArray jsonArray = new JSONArray(paramBody);
         JSONObject jsonObject = jsonArray.getJSONObject(0);
         flagDtoList.add(new FlagDto(
-            jsonObject.getString("associateEmail"),
-            jsonObject.getString("content"),
-            jsonObject.getInt("id"),
-            jsonObject.getString("type")
+                jsonObject.getString("associateEmail"),
+                jsonObject.getString("content"),
+                jsonObject.getInt("id"),
+                jsonObject.getString("type")
         ));
         return flagDtoList;
     }
@@ -149,14 +149,14 @@ public class apiUtils {
     private static Associate parseSubAssociate(JSONObject my_json, String key, Boolean assocAssign_present){
         JSONObject json_assoc =  my_json.getJSONObject(key);
         Associate associate = new Associate();
-            associate.setEmail(json_assoc.getString("email"));
-            associate.setFirstname(json_assoc.getString("firstname"));
-            associate.setFlag(parseSubFlag(json_assoc, "flag"));
-            associate.setLastname(json_assoc.getString("lastname"));
-            associate.setSalesforceId(json_assoc.getString("salesforceId"));
-            if (assocAssign_present) {
-                associate.setAssociateAssignments(parseSubAssociateAssignment(json_assoc, "associateAssignments", false));
-            }
+        associate.setEmail(json_assoc.getString("email"));
+        associate.setFirstname(json_assoc.getString("firstname"));
+        associate.setFlag(parseSubFlag(json_assoc, "flag"));
+        associate.setLastname(json_assoc.getString("lastname"));
+        associate.setSalesforceId(json_assoc.getString("salesforceId"));
+        if (assocAssign_present) {
+            associate.setAssociateAssignments(parseSubAssociateAssignment(json_assoc, "associateAssignments", false));
+        }
         return associate;
     }
 
@@ -174,7 +174,7 @@ public class apiUtils {
             entry.setStartDate(json_assocassign.getString("startDate"));
             entry.setTrainingStatus(json_assocassign.getString("trainingStatus"));
             associateAssignmentsList[i] = entry;
-            }
+        }
         return associateAssignmentsList;
     }
 

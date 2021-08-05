@@ -1,5 +1,9 @@
+
 package services;
 
+
+import dao.AssociateDaoImpl;
+import dao.AssociatePortfolioDaoImpl;
 import dao.apiDAO;
 import dao.apiDAOimpl;
 import models.Associate;
@@ -7,6 +11,8 @@ import models.Associate;
 public class userServiceImpl implements userService {
 
     apiDAO apidao;
+    AssociateDaoImpl associatedao;
+    AssociatePortfolioDaoImpl portfoliodao;
 
     public userServiceImpl() {
         this.apidao = new apiDAOimpl();
@@ -17,6 +23,24 @@ public class userServiceImpl implements userService {
 
         return this.apidao.loginUser(username, password);
     }
+
+    @Override
+    public String getSalesForceId(String email){
+        Associate associate = this.associatedao.getAssociateByEmail(email);
+        return associate.getSalesforceId();
+
+    }
+
+    @Override
+    public void editUser(String salesforceId, String firstname, String lastname, String email, String bio, String favoriteTech, String preference){
+        this.associatedao.updateAssociateFirstname(salesforceId, firstname);
+        this.associatedao.updateAssociateLastname(salesforceId, lastname);
+        this.associatedao.updateAssociateEmail(salesforceId, email);
+        this.portfoliodao.updateBio(salesforceId, bio);
+        this.portfoliodao.updatePreference(salesforceId, preference);
+        this.portfoliodao.updateFavoriteTechnologies(salesforceId, favoriteTech);
+    }
+
 
     @Override
     public boolean checkSession(String username){

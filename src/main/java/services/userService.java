@@ -11,6 +11,8 @@ public interface userService {
     boolean loginUser(String username, String password);
     boolean checkSession(String username);
     boolean passwordChange(String username, String newPassword);
+    void editUser(String salesforceId, String firstname, String lastname, String email, String bio, String favoriteTech, String preference);
+    String getSalesForceId(String email);
 
 //    void signUpUser(String username, String password, String email);
 

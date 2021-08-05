@@ -84,6 +84,8 @@
     <orderEntry type="library" name="Maven: classworlds:classworlds:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.aether:aether-api:0.9.0.M2" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.aether:aether-util:0.9.0.M2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.5" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20210307" level="project" />
     <orderEntry type="library" name="Maven: io.javalin:javalin:3.13.9" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.4.42.v20210604" level="project" />
