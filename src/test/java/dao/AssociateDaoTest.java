@@ -6,6 +6,7 @@ import models.Associate;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import javax.annotation.Resource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,22 +15,6 @@ import java.sql.SQLException;
 
 public class AssociateDaoTest{
 
-    @BeforeMethod(groups = {"requireDB"})
-    public void beforeMethod(){
-        Connection conn = null;
-        PreparedStatement stmt = null;
-
-        try {
-            conn = ConnectionConfig.getConnection();
-            stmt = conn.prepareStatement("INSERT into table VALUES(default, ?, ?, ?)");
-
-        } catch (SQLException e){
-            e.printStackTrace();
-        } finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
-    }
 
     @Test(groups = {"requireDB"})
     public void testCreateAssociate(){
@@ -39,7 +24,7 @@ public class AssociateDaoTest{
         String firstName = "Mockito";
         String lastName = "Test";
         String email = "mockito.test@revature.com";
-        String pass_word = "cocktail";
+        String pswrd = "cocktail";
         ResultSet result;
 
         try {
@@ -50,11 +35,11 @@ public class AssociateDaoTest{
             stmt.setString(2, firstName);
             stmt.setString(3, lastName);
             stmt.setString(4, email);
-            stmt.setString(5, pass_word);
-            result = stmt.executeQuery();
-            Assert.assertTrue(result.next());
+            stmt.setString(5, pswrd);
+            stmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
+            Assert.fail();
         } finally {
             ResourceClosers.closeConnection(conn);
             ResourceClosers.closeStatement(stmt);
@@ -120,5 +105,57 @@ public class AssociateDaoTest{
             ResourceClosers.closeConnection(conn);
             ResourceClosers.closeStatement(stmt);
         }
+    }
+
+    @DataProvider (name = "edit-password")
+    public Object[][] editPasswordObject(){
+        return new Object[][] { { "12345", "banana"}};
+    }
+
+    @Test(groups = {"requireDB"}, dataProvider = "edit-password")
+    public void testChangePassword(String salesforceId, String pswrd){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try{
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "UPDATE associate SET pswrd = ? WHERE salesforceId = ?";
+            stmt = conn.prepareStatement(SQL);
+            stmt.setString(1, pswrd);
+            stmt.setString(2, salesforceId);
+            stmt.execute();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            Assert.fail();
+        }
+        finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+        }
+    }
+
+    @BeforeSuite
+    public void beforeSuite() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        String saleid = "12345";
+
+        try {
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "DELETE from associate WHERE salesforceid = ?";
+            stmt = conn.prepareStatement(SQL);
+            stmt.setString(1, saleid);
+            stmt.executeUpdate();
+
+            System.out.println("Suite reset successful");
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+        }
+
     }
 }

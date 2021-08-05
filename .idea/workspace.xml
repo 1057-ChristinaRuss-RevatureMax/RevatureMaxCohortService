@@ -6,35 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RevatureMaxCohortService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RevatureMaxCohortService.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/ApiDatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ApiDatabaseConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/JavalinConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/JavalinConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AssociateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AssociateDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AssociateDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AssociateDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AssociatePortfolioDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AssociatePortfolioDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/apiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/apiDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/apiDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/driver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontcontroller/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontcontroller/Dispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/EmployeePortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/EmployeePortfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/userService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/userServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/APIDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/APIDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/dao/AssociateDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/AssociateDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/ApiDatabaseConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/ApiDatabaseConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/JavalinConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/JavalinConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/userController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/AssociateDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/AssociateDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/AssociateDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/AssociateDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/apiDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/apiDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/apiDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/apiDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/driver/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/driver/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/frontcontroller/Dispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/frontcontroller/Dispatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Associate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Associate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/EmployeePortfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/EmployeePortfolio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/userService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/userServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/userServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/AssociatePortfolioDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/AssociatePortfolioDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dao/AssociateDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dao/AssociateDaoTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,20 +67,7 @@
       <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Revature.Main" />
-      <module name="RevatureMaxCohortService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Revature.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.APIDaoTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="RevatureMaxCohortService" />
@@ -165,6 +126,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AssociateDaoTest.testGetAssociateBySalesforce" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="RevatureMaxCohortService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.AssociateDaoTest" />
+      <option name="METHOD_NAME" value="testGetAssociateBySalesforce" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AssociatePortfolioDaoTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="RevatureMaxCohortService" />
       <extension name="coverage">
@@ -184,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="TestNG.APIDaoTest" />
         <item itemvalue="TestNG.AssociatePortfolioDaoTest" />
         <item itemvalue="TestNG.AssociateDaoTest" />
-        <item itemvalue="TestNG.APIDaoTest" />
-        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="TestNG.AssociateDaoTest.testGetAssociateBySalesforce" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
