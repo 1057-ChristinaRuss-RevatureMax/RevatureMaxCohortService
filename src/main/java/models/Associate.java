@@ -9,8 +9,7 @@ public class Associate {
     private String lastname;
     private String salesforceId;
     private AssociateAssignment[] associateAssignments;
-//    private String flag;
-
+    private String password;
 
     public Associate(String email, String firstname, Flag flag, String lastname, String salesforceId, AssociateAssignment[] associateAssignments) {
         this.email = email;
@@ -55,6 +54,14 @@ public class Associate {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public String getSalesforceId() {
