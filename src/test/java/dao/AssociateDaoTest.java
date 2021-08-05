@@ -97,7 +97,7 @@ public class AssociateDaoTest{
         Associate associate = new Associate();
         Connection conn = null;
         PreparedStatement stmt = null;
-        String email = "";
+        String email = "mock5.associateb1fb89f2-bab6-4719-bc1a-4f6cda2b209f@mock.com";
         ResultSet set = null;
 
         try {
@@ -113,7 +113,7 @@ public class AssociateDaoTest{
                 associate.setEmail(set.getString(4));
                 associate.setPassword(set.getString(5));
             }
-            Assert.assertEquals(associate.getPassword(), "cocktail");
+            Assert.assertEquals(associate.getPassword(), "password");
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

@@ -19,6 +19,7 @@ public class JavalinConfig {
 //     */
     public static Javalin getApp(int port) {
         Javalin app = Javalin.create(config -> config.sessionHandler(SessionConfig::fileSessionHandler)
+                .addStaticFiles("src/main/resources/password-change", Location.EXTERNAL)
                 .addStaticFiles("src/main/resources/Common", Location.EXTERNAL)
                 .addStaticFiles("src/main/resources/AssociateDashboard", Location.EXTERNAL)
                 .addStaticFiles("src/main/resources/index", Location.EXTERNAL)

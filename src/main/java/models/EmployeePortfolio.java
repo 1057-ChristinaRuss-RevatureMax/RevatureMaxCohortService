@@ -1,4 +1,5 @@
 package models;
+
 public class EmployeePortfolio {
     private String salesforceId;
     private String bio;
@@ -44,7 +45,7 @@ public class EmployeePortfolio {
     public String getPassword(){
         return password;
     }
-    
+
     public void setPassword(String password){
         this.password = password;
     }
@@ -57,7 +58,7 @@ public class EmployeePortfolio {
             return "Successfully set Salesforce ID";
         }
     }
-    
+
 
 
 }

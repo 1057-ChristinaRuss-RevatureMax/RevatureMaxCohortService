@@ -12,67 +12,67 @@ import models.AssociateDto;
 
 public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 
-    public AssociatePortfolioDaoImpl() {
-		
-    }
-    
-    @Override
-    public void updateBio(String salesforceId, String bio){
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        try {
+	public AssociatePortfolioDaoImpl() {
+
+	}
+
+	@Override
+	public void updateBio(String salesforceId, String bio){
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
 			conn = ConnectionConfig.getConnection();
 			final String SQL = "update associate_portfolio set bio = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, bio);
 			stmt.setString(2, salesforceId);
 			stmt.execute();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			ResourceClosers.closeConnection(conn);
 			ResourceClosers.closeStatement(stmt);
 		}
-        
-    }
-    @Override
-    public void updatePreference(String salesforceId, String preference){
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        try {
+
+	}
+	@Override
+	public void updatePreference(String salesforceId, String preference){
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
 			conn = ConnectionConfig.getConnection();
 			final String SQL = "update associate_portfolio set preference = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, preference);
 			stmt.setString(2, salesforceId);
 			stmt.execute();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			ResourceClosers.closeConnection(conn);
 			ResourceClosers.closeStatement(stmt);
 		}
-    }
-    @Override
-    public void updateFavoriteTechnologies(String salesforceId, String technologies){
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        try {
+	}
+	@Override
+	public void updateFavoriteTechnologies(String salesforceId, String technologies){
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
 			conn = ConnectionConfig.getConnection();
 			final String SQL = "update associate_portfolio set favorite_technologies = ? where salesforceId = ?";
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, technologies);
 			stmt.setString(2, salesforceId);
 			stmt.execute();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			ResourceClosers.closeConnection(conn);
 			ResourceClosers.closeStatement(stmt);
 		}
-    }
+	}
 
 }

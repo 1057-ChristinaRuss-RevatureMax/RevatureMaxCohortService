@@ -42,6 +42,39 @@ public class userController {
         }
     }
 
+    public static void passwordChange(Context context) {
+        String username = context.sessionAttribute("session_username");
+        boolean validation = userController.validUser(username);
+        if (validation) {
+            LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
+        }
+        else{
+            context.redirect("/login");
+        }
+        if (context.method() == "POST") {
+            String oldPassword = context.formParam("oldpassword");
+            String newPassword = context.formParam("newpassword");
+            String retype = context.formParam("retype");
+            String user = context.sessionAttribute("session_username");
+
+            if (!newPassword.equals(retype)) {
+                context.sessionAttribute("password_msg", "unmatched");
+                context.redirect("/passwordchange");
+            }
+            else if (!userservice.loginUser(user, oldPassword)) {
+                context.sessionAttribute("password_msg", "invalid");
+                context.redirect("/passwordchange");
+            }
+            else if (userservice.passwordChange(user, newPassword)) {
+                context.redirect("http://localhost:9001/associateHome");
+            };
+
+
+        } else {
+            context.render("/password-change/password-change.html");
+        }
+    }
+
     private static boolean validUser(String username){
         boolean validation = userservice.checkSession(username);
         return validation;

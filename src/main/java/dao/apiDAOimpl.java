@@ -53,6 +53,34 @@ public class apiDAOimpl implements apiDAO{
     }
 
     @Override
+    public boolean passwordChange(String username, String newPassword) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int result = 0;
+
+        try {
+            //Establish the connection to the DB
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "UPDATE associate set pswrd = ? where email=?";
+            stmt = conn.prepareStatement(SQL);
+
+            stmt.setString(1, newPassword);
+            stmt.setString(2, username);
+
+            stmt.execute();
+
+            return true;
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+        }
+        return false;
+    }
+
+    @Override
     public boolean checkSession(String username) {
         Connection conn = null;
         PreparedStatement stmt = null;

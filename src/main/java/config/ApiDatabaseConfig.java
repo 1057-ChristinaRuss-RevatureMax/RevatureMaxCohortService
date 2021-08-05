@@ -19,7 +19,7 @@ public class ApiDatabaseConfig {
         //void createOne(String salesforceId, String firstName, String lastName, String email, String pass_word);
         for(int i=0; i<userList.size(); i++){
             JSONObject user = new JSONObject(userList.get(i));
-            db.createOne(user.getString("salesforceId"),user.getString("firstname"),user.getString("lastname"),user.getString("email"),"password");
+            db.createAssociate(user.getString("salesforceId"),user.getString("firstname"),user.getString("lastname"),user.getString("email"),"password");
         }
         
     }
