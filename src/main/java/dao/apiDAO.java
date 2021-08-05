@@ -7,4 +7,6 @@ import java.util.Map;
 
 public interface apiDAO {
     boolean loginUser(String username, String password);
+    
+    boolean passwordChange(String username, String newPassword);
 }

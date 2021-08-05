@@ -41,6 +41,31 @@ public class userController {
             context.render("/index/index.html");
         }
     }
+    
+    public static void passwordChange(Context context) {
+    	if (context.method() == "POST") {
+    		String oldPassword = context.formParam("oldpassword");
+    	    String newPassword = context.formParam("newpassword");
+    	    String retype = context.formParam("retype");
+    	    String user = "batman";
+    	    
+    	    if (!newPassword.equals(retype)) {
+    	    	context.sessionAttribute("password_msg", "unmatched");
+    	    	context.redirect("/passwordchange");
+    	    }
+    	    else if (!userservice.loginUser(user, oldPassword)) {
+    	    	context.sessionAttribute("password_msg", "invalid");
+    	        context.redirect("/passwordchange");
+    	    }
+    	    else if (userservice.passwordChange(user, oldPassword)) {
+    	    	context.redirect("http://localhost:9000/associate-profile.html");
+    	    };
+
+
+        } else {
+            context.render("/password-change/password-change.html");
+        }
+    }
 
     public static void home(Context context) {
         String username = context.sessionAttribute("session_username");

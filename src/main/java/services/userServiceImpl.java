@@ -17,6 +17,13 @@ public class userServiceImpl implements userService {
 
         return this.apidao.loginUser(username, password);
     }
+    
+    @Override
+    public boolean passwordChange(String username, String newPassword) {
+    	
+    	return this.apidao.passwordChange(username, newPassword);
+    }
+
 }
 
 //    @Override

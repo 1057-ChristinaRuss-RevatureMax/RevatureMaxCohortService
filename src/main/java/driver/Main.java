@@ -12,6 +12,6 @@ public class Main {
 
         Javalin app = JavalinConfig.getApp(9001);
 
-        FrontController fc = new FrontController(app);
+        new FrontController(app);
     }
 }

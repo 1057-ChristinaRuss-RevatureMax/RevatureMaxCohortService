@@ -22,6 +22,8 @@ public class Dispatcher {
 //                edit profile associate
 //                change password trainer
 //                change password associate
+        app.get("/passwordchange", userController::passwordChange);
+        app.post("/passwordchange", userController::passwordChange);
 //                associate-dashboard
 //                        trainer-dashboard
 //                                trainer-batch-view
@@ -29,11 +31,26 @@ public class Dispatcher {
 
         // invalid credentials on login
         app.get("/invalid", ctx -> {
-            if (ctx.sessionAttribute("session_username") == ("invalid")) {
+        	if (ctx.sessionAttribute("session_username").equals("invalid")) {
                 ctx.json("invalid");
                 ctx.sessionAttribute("session_username", null);
             }
     });
+        
+        app.get("/invalidpassword", ctx ->{
+        	if(ctx.sessionAttribute("password_msg") == null) {
+        		ctx.json("isNull");
+        	}
+        	else if (ctx.sessionAttribute("password_msg").equals("invalid")) {
+                ctx.json("invalid");
+                ctx.sessionAttribute("password_msg", null);
+            }
+        	else if(ctx.sessionAttribute("password_msg").equals("unmatched")) {
+        		ctx.json("unmatched");
+                ctx.sessionAttribute("password_msg", null);
+        	}
+        });
+        
         app.get("/logout", userController::logout);
 }
 }
