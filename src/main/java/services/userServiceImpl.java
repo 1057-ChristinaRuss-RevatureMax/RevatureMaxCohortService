@@ -1,10 +1,13 @@
 package services;
 
+import com.google.gson.JsonArray;
+
 import dao.AssociateDaoImpl;
 import dao.AssociatePortfolioDaoImpl;
 import dao.apiDAO;
 import dao.apiDAOimpl;
 import models.Associate;
+import models.AssociatePortfolio;
 
 public class userServiceImpl implements userService {
 
@@ -30,13 +33,14 @@ public class userServiceImpl implements userService {
         return this.apidao.loginUser(username, password);
     }
     @Override
-    public void editUser(String salesforceId, String firstname, String lastname, String email, String bio, String favoriteTech, String preference){
+    public void editUser(String salesforceId, String firstname, String lastname, String email, String bio, JsonArray favoriteTech, String preference){
         this.associatedao.updateAssociateFirstname(salesforceId, firstname);
         this.associatedao.updateAssociateLastname(salesforceId, lastname);
         this.associatedao.updateAssociateEmail(salesforceId, email);
         this.portfoliodao.updateBio(salesforceId, bio);
         this.portfoliodao.updatePreference(salesforceId, preference);
-        this.portfoliodao.updateFavoriteTechnologies(salesforceId, favoriteTech);
+        String tech = favoriteTech.toString();
+        this.portfoliodao.updateFavoriteTechnologies(salesforceId, tech);
     }
 
 
@@ -49,6 +53,14 @@ public class userServiceImpl implements userService {
     public boolean passwordChange(String username, String newPassword) {
 
         return this.apidao.passwordChange(username, newPassword);
+    }
+    
+    public Associate getUserBySalesForceId(String salesforceId){
+        return(this.associatedao.getAssociateBySalesforce(salesforceId));
+    }
+
+    public AssociatePortfolio getPortfolioBySalesForceId(String salesforceId){
+        return(this.portfoliodao.getPortfolioBySalesforce(salesforceId));
     }
 
 }

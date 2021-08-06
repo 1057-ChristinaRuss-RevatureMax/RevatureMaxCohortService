@@ -25,7 +25,7 @@ create table associate_portfolio(
 );
 
 create table employee (
-    salesforceId varchar(10) primary key not null, 
+    salesforceId Integer primary key not null, 
     firstname varchar(20) not null,
     lastname varchar(20) not null,
     email varchar(80),
@@ -38,7 +38,7 @@ create table employee_portfolio(
     bio text,
     technology text,
     trainer_location varchar(25),
-    salesforceId varchar(10) not null,
+    salesforceId Integer not null,
     foreign key (salesforceId)
     references associate(salesforceId)
     

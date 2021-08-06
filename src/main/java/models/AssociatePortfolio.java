@@ -5,6 +5,10 @@ public class AssociatePortfolio {
     private String favoriteTechnology;
     private String preference;
     private String salesForceId;
+    
+    public AssociatePortfolio(){
+        
+    }
 
     public AssociatePortfolio(String bio, String favoriteTechnology, String preference, String salesForceId) {
         this.bio = bio;

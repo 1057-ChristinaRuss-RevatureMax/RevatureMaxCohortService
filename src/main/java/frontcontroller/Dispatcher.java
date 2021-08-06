@@ -14,17 +14,19 @@ public class Dispatcher {
         app.get("/", userController::loginUser);
         app.get("/login", userController::loginUser);
         app.post("/login", userController::loginUser);
-        app.post("/associate/edit", userController::editUser);
-        app.post("/employee/edit", employeeController::editEmployee);
-
+        app.post("/associate", userController::editUser);
+        app.post("/employee", employeeController::editEmployee);
+        //app.get("/editassociateprofile", user)
         // Associate Home Page Controls
-        //app.get("/home", userController::home);
+        app.get("/associateHome", userController::associateHome);
 //        app.get("/associate", userController::
 //        trainer view/
 //        edit profile trainer
 //                edit profile associate
         app.get("/passwordchange", userController::passwordChange);
         app.post("/passwordchange", userController::passwordChange);
+        app.get("/editassociateprofile", userController::editUser);
+        app.post("/editassociateprofile", userController::editUser);
 //                associate-dashboard
 //                        trainer-dashboard
 //                                trainer-batch-view

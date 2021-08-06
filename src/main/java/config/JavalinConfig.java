@@ -23,6 +23,7 @@ public class JavalinConfig {
                 .addStaticFiles("src/main/resources/Common", Location.EXTERNAL)
                 .addStaticFiles("src/main/resources/AssociateDashboard", Location.EXTERNAL)
                 .addStaticFiles("src/main/resources/index", Location.EXTERNAL)
+                .addStaticFiles("src/main/resources/associate-profile", Location.EXTERNAL)
                 .enableCorsForOrigin("127.0.0.1")
                 .server(()->{
                     // configure https/ssl if needed

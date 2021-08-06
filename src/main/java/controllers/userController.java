@@ -1,9 +1,11 @@
 package controllers;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.json.Json;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import config.LoggerConfig;
@@ -14,8 +16,11 @@ import org.apache.commons.io.FileUtils;
 import services.userService;
 import services.userServiceImpl;
 import dao.AssociateDaoImpl;
+import models.Associate;
+import models.AssociatePortfolio;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class userController {
 
@@ -37,7 +42,7 @@ public class userController {
             if (username != null && password != null && login) {
                 LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
                 context.sessionAttribute("session_username", username);
-                //context.sessionAttribute("salesforceId", userservice.getSalesForceId(username));
+                context.sessionAttribute("salesforceId", userservice.getSalesForceId(username));
                 context.json("{Success: login successful}").status(200);
                 context.redirect("/associateHome");
 
@@ -110,10 +115,9 @@ public class userController {
             String lastname = null;
             String email = null;
             String bio = null;
-            String favorite_tech = null;
+            JsonArray favorite_tech = null;
             String preference = null;
             //Sales force id will eventually come from session, this is just for testing
-            String salesforceId = null;
             String body = context.body();
             
             JsonObject bodyJson = new Gson().fromJson(body, JsonObject.class);
@@ -121,16 +125,28 @@ public class userController {
             lastname = bodyJson.get("lastName").getAsString();
             email = bodyJson.get("emailAddress").getAsString();
             bio = bodyJson.get("bio").getAsString();
-            favorite_tech = bodyJson.get("favoriteTechnologies").getAsString();
+            favorite_tech = bodyJson.get("favoriteTechnologies").getAsJsonArray();
             preference = bodyJson.get("preference").getAsString();
             //Sales force id will eventually come from session, this is just for testing
-            salesforceId = bodyJson.get("salesforceId").getAsString();
+            String salesforceId = context.sessionAttribute("salesforceId");
 
             userservice.editUser(salesforceId, firstname, lastname, email, bio, favorite_tech, preference);
-
-            //String salesforceId = context.sessionAttribute("salesforceId");
-
-
+            context.redirect("http://localhost:9001/associateHome");
+        }
+        else{
+            Map<String, String> map = new HashMap<String, String>();
+            Associate user = userservice.getUserBySalesForceId(context.sessionAttribute("salesforceId"));
+            AssociatePortfolio portfolio = userservice.getPortfolioBySalesForceId(context.sessionAttribute("salesforceId"));
+            map.put("firstName", user.getFirstname());
+            map.put("lastName", user.getLastname());
+            map.put("emailAddress", user.getEmail());
+            map.put("bio", portfolio.getBio());
+            map.put("favoriteTechnologies", portfolio.getFavoriteTechnology());
+            map.put("preference", portfolio.getPreference());
+            JSONObject json = new JSONObject(map);
+            context.json(json);
+            System.out.print("sent Json");
+            context.render("/associate-profile/associate-profile.html");
         }
 
     }

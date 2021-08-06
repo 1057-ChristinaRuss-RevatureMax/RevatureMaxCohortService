@@ -13,6 +13,7 @@ import config.ConnectionConfig;
 import config.ResourceClosers;
 import models.Associate;
 import models.AssociateDto;
+import models.AssociatePortfolio;
 
 public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 
@@ -97,5 +98,32 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
 			ResourceClosers.closeStatement(stmt);
 		}
 	}
+
+	public AssociatePortfolio getPortfolioBySalesforce(String salesforceId) {
+        AssociatePortfolio portfolio = new AssociatePortfolio();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet set = null;
+
+        try {
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "select * from associate_portfolio where salesforceId = ?";
+            stmt = conn.prepareStatement(SQL);
+            stmt.setString(1, salesforceId);
+            set = stmt.executeQuery();
+            while(set.next()) {
+                portfolio.setSalesForceId(set.getString(1));
+                portfolio.setBio(set.getString(2));
+                portfolio.setFavoriteTechnology(set.getString(3));
+                portfolio.setPreference(set.getString(4));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+            return portfolio;
+        }
+    }
 
 }
