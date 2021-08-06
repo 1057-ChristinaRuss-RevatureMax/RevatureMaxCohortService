@@ -159,4 +159,40 @@ public class AssociateDaoTest{
         }
 
     }
+
+    @AfterSuite(groups = {"requireDB"})
+    public void afterSuite() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        String salesforceid = "SF-1234";
+
+        try {
+            conn = ConnectionConfig.getConnection();
+            stmt = conn.prepareStatement("DELETE from associate_portfolio WHERE salesforceid = ?");
+            stmt.setString(1, salesforceid);
+            stmt.execute();
+            System.out.println("Associate_portfolio System successfully reset");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+        }
+
+        try {
+            conn = ConnectionConfig.getConnection();
+            stmt = conn.prepareStatement("DELETE from associate WHERE salesforceid = ?");
+            stmt.setString(1, salesforceid);
+            stmt.execute();
+            System.out.println("Associate System successfully reset");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+        }
+    }
+
 }
