@@ -2,8 +2,6 @@
 <project version="4">
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
-<<<<<<< HEAD
-=======
   </component>
   <component name="BranchesTreeState">
     <expand>
@@ -28,16 +26,12 @@
       </path>
     </expand>
     <select />
->>>>>>> 0f1af99 (Started unit testing)
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/RevatureMaxCohortService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RevatureMaxCohortService.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/user/Associate.java" beforeDir="false" />
->>>>>>> 0f1af99 (Started unit testing)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +82,12 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService\src\main\resources" />
+      <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService\src\main\java" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Gamer\Documents\RevatureCode\FinalProject\RevatureMaxCohortService" />
     </key>
   </component>
   <component name="RunManager" selected="TestNG.APIDaoTest.testGetAllUsers">
@@ -144,8 +139,6 @@
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <option name="filePath" />
-<<<<<<< HEAD
-=======
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,7 +157,6 @@
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
->>>>>>> 0f1af99 (Started unit testing)
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,14 +170,10 @@
       </list>
     </recent_temporary>
   </component>
-<<<<<<< HEAD
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-=======
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
->>>>>>> 0f1af99 (Started unit testing)
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="89f991ba-1002-4180-be4f-472cc59849d9" name="Default Changelist" comment="" />

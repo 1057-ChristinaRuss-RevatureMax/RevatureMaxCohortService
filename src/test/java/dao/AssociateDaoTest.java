@@ -6,10 +6,6 @@ import models.Associate;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-<<<<<<< HEAD
-import javax.annotation.Resource;
-=======
->>>>>>> 0f1af99 (Started unit testing)
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,8 +14,6 @@ import java.sql.SQLException;
 
 public class AssociateDaoTest{
 
-<<<<<<< HEAD
-=======
     @BeforeMethod(groups = {"requireDB"})
     public void beforeMethod(){
         Connection conn = null;
@@ -36,7 +30,6 @@ public class AssociateDaoTest{
             ResourceClosers.closeStatement(stmt);
         }
     }
->>>>>>> 0f1af99 (Started unit testing)
 
     @Test(groups = {"requireDB"})
     public void testCreateAssociate(){
@@ -46,11 +39,7 @@ public class AssociateDaoTest{
         String firstName = "Mockito";
         String lastName = "Test";
         String email = "mockito.test@revature.com";
-<<<<<<< HEAD
-        String pswrd = "cocktail";
-=======
         String pass_word = "cocktail";
->>>>>>> 0f1af99 (Started unit testing)
         ResultSet result;
 
         try {
@@ -61,19 +50,11 @@ public class AssociateDaoTest{
             stmt.setString(2, firstName);
             stmt.setString(3, lastName);
             stmt.setString(4, email);
-<<<<<<< HEAD
-            stmt.setString(5, pswrd);
-            stmt.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Assert.fail();
-=======
             stmt.setString(5, pass_word);
             result = stmt.executeQuery();
             Assert.assertTrue(result.next());
         } catch (SQLException e) {
             e.printStackTrace();
->>>>>>> 0f1af99 (Started unit testing)
         } finally {
             ResourceClosers.closeConnection(conn);
             ResourceClosers.closeStatement(stmt);
@@ -116,11 +97,7 @@ public class AssociateDaoTest{
         Associate associate = new Associate();
         Connection conn = null;
         PreparedStatement stmt = null;
-<<<<<<< HEAD
-        String email = "mock5.associateb1fb89f2-bab6-4719-bc1a-4f6cda2b209f@mock.com";
-=======
         String email = "";
->>>>>>> 0f1af99 (Started unit testing)
         ResultSet set = null;
 
         try {
@@ -136,11 +113,7 @@ public class AssociateDaoTest{
                 associate.setEmail(set.getString(4));
                 associate.setPassword(set.getString(5));
             }
-<<<<<<< HEAD
-            Assert.assertEquals(associate.getPassword(), "password");
-=======
             Assert.assertEquals(associate.getPassword(), "cocktail");
->>>>>>> 0f1af99 (Started unit testing)
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -148,60 +121,4 @@ public class AssociateDaoTest{
             ResourceClosers.closeStatement(stmt);
         }
     }
-<<<<<<< HEAD
-
-    @DataProvider (name = "edit-password")
-    public Object[][] editPasswordObject(){
-        return new Object[][] { { "12345", "banana"}};
-    }
-
-    @Test(groups = {"requireDB"}, dataProvider = "edit-password")
-    public void testChangePassword(String salesforceId, String pswrd){
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        try{
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "UPDATE associate SET pswrd = ? WHERE salesforceId = ?";
-            stmt = conn.prepareStatement(SQL);
-            stmt.setString(1, pswrd);
-            stmt.setString(2, salesforceId);
-            stmt.execute();
-        }
-        catch (SQLException e){
-            e.printStackTrace();
-            Assert.fail();
-        }
-        finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
-    }
-
-    @BeforeSuite
-    public void beforeSuite() {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        String saleid = "12345";
-
-        try {
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "DELETE from associate WHERE salesforceid = ?";
-            stmt = conn.prepareStatement(SQL);
-            stmt.setString(1, saleid);
-            stmt.executeUpdate();
-
-            System.out.println("Suite reset successful");
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
-
-    }
 }
-=======
-}
->>>>>>> 0f1af99 (Started unit testing)

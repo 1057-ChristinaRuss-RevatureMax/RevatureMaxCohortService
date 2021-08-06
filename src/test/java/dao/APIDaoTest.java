@@ -6,25 +6,17 @@ import config.ResourceClosers;
 import models.Associate;
 import org.testng.Assert;
 import org.testng.annotations.*;
-<<<<<<< HEAD
-import org.testng.asserts.SoftAssert;
-=======
 
->>>>>>> 0f1af99 (Started unit testing)
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-<<<<<<< HEAD
-import java.sql.*;
-=======
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
->>>>>>> 0f1af99 (Started unit testing)
 
 public class APIDaoTest {
 
@@ -49,24 +41,14 @@ public class APIDaoTest {
     public void testLoginUser(){
         Connection conn = null;
         PreparedStatement stmt = null;
-<<<<<<< HEAD
-        String username = "mock17.associate655088fb-9cce-4c1b-add6-bbdd252465cd@mock.com";
-        String password = "password";
-=======
         String username = "";
         String password = "";
->>>>>>> 0f1af99 (Started unit testing)
         ResultSet result = null;
 
         try {
             //Establish the connection to the DB
-<<<<<<< HEAD
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "SELECT email, pswrd FROM associate where email=? AND pswrd=?";
-=======
             conn = RDSConnectionConfig.getConnection();
             final String SQL = "SELECT email, pass_word FROM associate where email=? AND pass_word=?";
->>>>>>> 0f1af99 (Started unit testing)
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, username);
@@ -124,14 +106,7 @@ public class APIDaoTest {
         } finally {
             connection.disconnect();
         }
-<<<<<<< HEAD
-        StringBuffer paramBody = new StringBuffer(responseContent);
-        Assert.assertEquals(paramBody.toString(), responseContent.toString());
-    }
-}
-=======
         String paramBody = new String(responseContent);
         Assert.assertEquals(paramBody, responseContent);
     }
 }
->>>>>>> 0f1af99 (Started unit testing)
