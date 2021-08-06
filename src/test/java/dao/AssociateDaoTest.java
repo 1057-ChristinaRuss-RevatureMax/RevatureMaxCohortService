@@ -20,7 +20,7 @@ public class AssociateDaoTest{
     public void testCreateAssociate(){
         Connection conn = null;
         PreparedStatement stmt = null;
-        String salesforceId = "12345";
+        String salesforceId = "SF-1234";
         String firstName = "Mockito";
         String lastName = "Test";
         String email = "mockito.test@revature.com";
@@ -52,7 +52,7 @@ public class AssociateDaoTest{
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet set;
-        String salesforceId = "12345";
+        String salesforceId = "SF-1234";
 
         try {
             conn = ConnectionConfig.getConnection();
@@ -109,7 +109,7 @@ public class AssociateDaoTest{
 
     @DataProvider (name = "edit-password")
     public Object[][] editPasswordObject(){
-        return new Object[][] { { "12345", "banana"}};
+        return new Object[][] { { "SF-1234", "banana"}};
     }
 
     @Test(groups = {"requireDB"}, dataProvider = "edit-password")
@@ -134,11 +134,12 @@ public class AssociateDaoTest{
         }
     }
 
+
     @BeforeSuite
     public void beforeSuite() {
         Connection conn = null;
         PreparedStatement stmt = null;
-        String saleid = "12345";
+        String saleid = "SF-1234";
 
         try {
             conn = ConnectionConfig.getConnection();
@@ -147,7 +148,7 @@ public class AssociateDaoTest{
             stmt.setString(1, saleid);
             stmt.executeUpdate();
 
-            System.out.println("Suite reset successful");
+            System.out.println("Associate Suite reset successful");
         }
         catch (SQLException e) {
             e.printStackTrace();
