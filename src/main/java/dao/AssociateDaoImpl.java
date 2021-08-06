@@ -10,10 +10,36 @@ import java.sql.ResultSet;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AssociateDaoImpl implements AssociateDao {
 
     public AssociateDaoImpl() {
+
+    }
+
+    public ArrayList<String> getAllSalesForceId(){
+        ArrayList<String> ids = new ArrayList<String>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet set = null;
+
+        try {
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "select salesforceId from associate";
+            stmt = conn.prepareStatement(SQL);
+            set = stmt.executeQuery();
+            while(set.next()) {
+                ids.add(set.getString(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+            return ids;
+        }
 
     }
 

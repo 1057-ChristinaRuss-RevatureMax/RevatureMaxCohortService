@@ -15,19 +15,13 @@ import dao.EmployeePortfolioDao;
 public class ApiDatabaseConfig {
 
     public static void initAssociates(){
-        AssociateDaoImpl associatedb = new AssociateDaoImpl();
+
+        AssociateDaoImpl dao = new AssociateDaoImpl();
+        ArrayList<String> ids = dao.getAllSalesForceId();
         AssociatePortfolioDaoImpl portfoliodb = new AssociatePortfolioDaoImpl();
-        ArrayList userList = new ArrayList<Associate>();
-        String parambody = apiDAOimpl.getAllUsers();
-        userList = apiUtils.JSONConvertAssociate(parambody);
 
-
-        //void createOne(String salesforceId, String firstName, String lastName, String email, String pass_word);
-        for(int i=0; i<userList.size(); i++){
-            JSONObject user = new JSONObject(userList.get(i));
-            associatedb.createAssociate(user.getString("salesforceId"),user.getString("firstname"),user.getString("lastname"),user.getString("email"),"password");
-            portfoliodb.createOne(user.getString("salesforceId"));
-            
+        for(String id : ids){
+            portfoliodb.createOne(id);
         }
         
     }
