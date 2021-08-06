@@ -19,6 +19,7 @@ public class Dispatcher {
         //app.get("/editassociateprofile", user)
         // Associate Home Page Controls
         app.get("/associateHome", userController::associateHome);
+        app.get("/employeeHome", employeeController::employeeHome);
 //        app.get("/associate", userController::
 //        trainer view/
 //        edit profile trainer
