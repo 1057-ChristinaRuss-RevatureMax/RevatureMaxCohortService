@@ -9,7 +9,10 @@ import config.LoggerConfig;
 public class Dispatcher {
 
     public Dispatcher(Javalin app) {
-
+//        app.after(ctx -> {
+//            String batchid;
+//            ctx.sessionAttribute("batchID", batchid);
+//        })
         // Login and signup
         app.get("/", userController::loginUser);
         app.get("/login", userController::loginUser);

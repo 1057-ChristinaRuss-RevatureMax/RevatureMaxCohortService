@@ -44,7 +44,9 @@ public class userController {
             }
             if (username != null && password != null && login) {
                 LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
+//                String batchID = getBatchID(username);
                 context.sessionAttribute("session_username", username);
+//                context.sessionAttribute("batchID", batchID);
                 context.sessionAttribute("salesforceId", userservice.getSalesForceId(username));
                 context.json("{Success: login successful}").status(200);
                 context.redirect("/associateHome");

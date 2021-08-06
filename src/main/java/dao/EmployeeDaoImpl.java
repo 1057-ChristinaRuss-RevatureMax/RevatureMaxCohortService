@@ -144,4 +144,25 @@ public class EmployeeDaoImpl {
             ResourceClosers.closeStatement(stmt);
         }
     }
+
+//    public void getBatchID(String email){
+//        Connection conn = null;
+//        PreparedStatement stmt = null;
+//        ResultSet set = null;
+//
+//        try {
+//            conn = ConnectionConfig.getConnection();
+//            final String SQL = "Select batch";
+//            stmt = conn.prepareStatement(SQL);
+//            stmt.setString(1, email);
+//            stmt.setInt(2, salesforceId);
+//            stmt.execute();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } finally {
+//            ResourceClosers.closeConnection(conn);
+//            ResourceClosers.closeStatement(stmt);
+//        }
+//    }
+
 }
