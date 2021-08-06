@@ -13,6 +13,7 @@ import io.javalin.http.Context;
 
 import driver.Main;
 import org.apache.commons.io.FileUtils;
+import org.eclipse.jetty.util.ajax.JSON;
 import services.userService;
 import services.userServiceImpl;
 import dao.AssociateDaoImpl;
@@ -115,7 +116,7 @@ public class userController {
             String lastname = null;
             String email = null;
             String bio = null;
-            JsonArray favorite_tech = null;
+            String favorite_tech = null;
             String preference = null;
             //Sales force id will eventually come from session, this is just for testing
             String body = context.body();
@@ -125,7 +126,7 @@ public class userController {
             lastname = bodyJson.get("lastName").getAsString();
             email = bodyJson.get("emailAddress").getAsString();
             bio = bodyJson.get("bio").getAsString();
-            favorite_tech = bodyJson.get("favoriteTechnologies").getAsJsonArray();
+            favorite_tech = bodyJson.get("favoriteTechnologies").getAsString();
             preference = bodyJson.get("preference").getAsString();
             //Sales force id will eventually come from session, this is just for testing
             String salesforceId = context.sessionAttribute("salesforceId");
@@ -143,10 +144,8 @@ public class userController {
             map.put("bio", portfolio.getBio());
             map.put("favoriteTechnologies", portfolio.getFavoriteTechnology());
             map.put("preference", portfolio.getPreference());
-            JSONObject json = new JSONObject(map);
-            context.json(json);
-            System.out.print("sent Json");
-            context.render("/associate-profile/associate-profile.html");
+            context.json(map);
+            System.out.println("sent Json");
         }
 
     }

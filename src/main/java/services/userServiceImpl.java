@@ -33,7 +33,7 @@ public class userServiceImpl implements userService {
         return this.apidao.loginUser(username, password);
     }
     @Override
-    public void editUser(String salesforceId, String firstname, String lastname, String email, String bio, JsonArray favoriteTech, String preference){
+    public void editUser(String salesforceId, String firstname, String lastname, String email, String bio, String favoriteTech, String preference){
         this.associatedao.updateAssociateFirstname(salesforceId, firstname);
         this.associatedao.updateAssociateLastname(salesforceId, lastname);
         this.associatedao.updateAssociateEmail(salesforceId, email);

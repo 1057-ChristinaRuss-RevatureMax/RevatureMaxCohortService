@@ -1,6 +1,6 @@
 
 drop TABLE IF exists associate_portfolio;
-drop TABLE IF exists associate_portfolio;
+drop TABLE IF exists employee_portfolio;
 drop TABLE IF exists associate;
 drop table if exists employee;
 
@@ -15,10 +15,10 @@ create table associate(
 
 
 create table associate_portfolio(
+    salesforceId varchar(10) not null,
     bio text,
     favorite_technologies text,
     preference varchar(15),
-    salesforceId varchar(10) not null,
     foreign key (salesforceId)
     references associate(salesforceId)
 
@@ -35,10 +35,10 @@ create table employee (
 
 
 create table employee_portfolio(
+    salesforceId Integer not null,
     bio text,
     technology text,
     trainer_location varchar(25),
-    salesforceId Integer not null,
     foreign key (salesforceId)
     references associate(salesforceId)
     
