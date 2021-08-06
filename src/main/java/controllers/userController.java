@@ -97,6 +97,12 @@ public class userController {
         return validation;
     }
 
+
+    public static void logout(Context context){
+        context.req.getSession().invalidate();
+        context.redirect("/login");
+    }
+
     public static void associateHome(Context context) {
         String username = context.sessionAttribute("session_username");
         boolean validation = userController.validUser(username);
