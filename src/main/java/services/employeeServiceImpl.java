@@ -11,6 +11,13 @@ public class employeeServiceImpl {
         portfoliodao = new EmployeePortfolioDao();
     }
 
+    public boolean loginEmployee(String username, String password){
+        return employeedao.employeeLogin(username, password);
+    }
+    public int getSalesForceId(String email){
+        return employeedao.getSalesForceId(email);
+
+    }
     public void editEmployee(int salesforceId, String firstname, String lastname, String email, String bio, String technology, String location){
         this.employeedao.updateAssociateFirstname(salesforceId, firstname);
         this.employeedao.updateAssociateLastname(salesforceId, lastname);

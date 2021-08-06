@@ -12,6 +12,23 @@ import io.javalin.http.Context;
 public class employeeController {
     static employeeServiceImpl employeeService = new employeeServiceImpl();
 
+    private static boolean validUser(String username){
+        return(true);
+    }
+
+    public static void employeeHome(Context context){
+        String username = context.sessionAttribute("session_username");
+        boolean validation = employeeController.validUser(username);
+        if (validation) {
+            LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
+            context.json("{Success: login successful} Now Home" + " " + username).status(200);
+            context.render("/trainer-profile/trainer-profile.html");
+        }
+        else {
+            context.redirect("/login");
+        }
+    }
+
     public static void editEmployee(Context context){
         if (context.method() == "POST") {
             String firstname = null;

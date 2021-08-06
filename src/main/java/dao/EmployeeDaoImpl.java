@@ -34,6 +34,59 @@ public class EmployeeDaoImpl {
         }
     }
 
+    public int getSalesForceId(String email){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet set = null;
+        int id = -1;
+
+        try {
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "select salesforceId from employee where email = ?";
+            stmt = conn.prepareStatement(SQL);
+            stmt.setString(1, email);
+            set = stmt.executeQuery();
+            while(set.next()) {
+                id = set.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+            return id;
+        }
+    }
+
+    public boolean employeeLogin(String username, String password){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet result = null;
+
+        try {
+            //Establish the connection to the DB
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "SELECT email, pswrd FROM employee where email=? AND pswrd=?";
+            stmt = conn.prepareStatement(SQL);
+
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+
+            result = stmt.executeQuery();
+
+            boolean exists = result.next();
+
+            return exists;
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+        }
+        return false;
+    }
+
     public void updateAssociateFirstname(int salesforceId, String firstname) {
         Connection conn = null;
         PreparedStatement stmt = null;

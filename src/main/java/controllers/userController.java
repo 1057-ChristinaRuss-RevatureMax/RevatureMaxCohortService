@@ -13,6 +13,8 @@ import io.javalin.http.Context;
 
 import driver.Main;
 import org.apache.commons.io.FileUtils;
+
+import services.employeeServiceImpl;
 import services.userService;
 import services.userServiceImpl;
 import dao.AssociateDaoImpl;
@@ -25,6 +27,7 @@ import java.util.Map;
 public class userController {
 
     static userService userservice = new userServiceImpl();
+    static employeeServiceImpl empservice = new employeeServiceImpl();
     // PORT NUMBER MIGHT NEED TO BE REFACTORED
 
     // FOR LOGIN
@@ -36,6 +39,7 @@ public class userController {
             username = context.formParam("username");
             password = context.formParam("password");
             boolean login = userservice.loginUser(username, password);
+            boolean employeelogin = empservice.loginEmployee(username, password);
             if (login == false) {
                 context.sessionAttribute("session_username", "invalid");
             }
@@ -46,6 +50,13 @@ public class userController {
                 context.json("{Success: login successful}").status(200);
                 context.redirect("/associateHome");
 
+            }
+            else if(username != null && password != null && employeelogin) {
+                LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
+                context.sessionAttribute("session_username", username);
+                context.sessionAttribute("salesforceId", empservice.getSalesForceId(username));
+                context.json("{Success: login successful}").status(200);
+                context.redirect("/employeeHome");
             }
             else {
                 context.sessionAttribute("session_username", username);
