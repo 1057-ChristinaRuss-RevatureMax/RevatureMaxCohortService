@@ -9,4 +9,5 @@ public interface apiDAO {
     boolean loginUser(String username, String password);
     boolean checkSession(String username);
     boolean passwordChange(String username, String newPassword);
+    boolean checkSessionTrainer(String username);
 }

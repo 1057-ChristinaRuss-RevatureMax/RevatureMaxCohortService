@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color experiment</title>
+    <link rel="stylesheet" href="/trainer-dashboard.css">
+    <link rel="stylesheet" href="../Common/main.css">
+</head>
+<body>
+<div class="glass">
+    <div class="dashboard">
+        <img src="img/rev-logo.png" id="rev-logo" alt="Revature Logo">
+        <!-- <div class="link">
+            <img src="icons8-dashboard-layout-24.png" alt="Dashboard Icon">
+            <h3>Dashboard</h3>
+        </div>
+        <div class="link">
+            <img src="icons8-statistics-24.png" alt="Statistics Icon">
+            <h3>Statistics</h3>
+        </div>
+        <div class="link">
+            <img src="icons8-settings-30.png" alt="Settings Icon">
+            <h3>Settings</h3>
+        </div> -->
+        <ul class="tabs">
+            <li class="active tab" data-tab-target="#dashboard-tab">
+                <img src="img/icons8-dashboard-layout-24.png" alt="Dashboard Icon">
+                <span>Dashboard</span>
+
+            </li>
+            <li class="tab" data-tab-target="#statistics-tab">
+                <img src="img/icons8-statistics-24.png" alt="Statistics Icon">
+                <span>Statistics</span>
+            </li>
+            <li class="tab" data-tab-target="#settings-tab">
+                <img src="img/icons8-settings-30.png" alt="Settings Icon">
+                <span>Settings</span>
+            </li>
+        </ul>
+
+        <div class="user">
+            <img src="img/icons8-user-24.png" alt="User Icon">
+            <h2>John Doe</h2>
+            <h3>Elite Trainer</h3>
+        </div>
+
+        <div id="logout">
+            <img src="img/icons8-logout-rounded-left-32.png" alt="logout Icon">
+            <h3>Logout</h3>
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div class="search">
+            <h1>Search</h1>
+            <input type="text" id="searchBox" onkeyup="myFunction()" placeholder="Search for Associates...">
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="tab-content">
+
+                    <div id="dashboard-tab" data-tab-content class="active">
+                        <!-- This needs to be a table that container the single static row for batch average -->
+                        <table id="batch-table">
+                            <thead id="batch-table-head">
+                            </thead>
+                        </table>
+
+
+                        <table id="associate-table">
+                            <thead id="associate-table-head">
+                            </thead>
+                            <tbody id="associate-table-data">
+                            </tbody>
+                        </table>
+                        <!-- This is where we will put the table for the associate names -->
+                    </div>
+
+                    <div id="statistics-tab" data-tab-content>
+                        <h1>Statistics</h1>
+                        <p>Content in the Statistics</p>
+                        <div class="card">
+                            <table>
+                                <tr>
+                                    <th>Sample Header 1</th>
+                                    <th>Sample Header 2</th>
+                                    <th>Sample Header 3</th>
+                                </tr>
+                                <tr>
+                                    <td>Row 1 Data 1</td>
+                                    <td>Row 1 Data 2</td>
+                                    <td>Row 1 Data 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 2 Data 1</td>
+                                    <td>Row 2 Data 2</td>
+                                    <td>Row 2 Data 3</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="settings-tab" data-tab-content>
+                        <h1>Settings</h1>
+                        <p>Content in the Settings</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/trainer-dashboard.js"></script>
+</body>
+</html>

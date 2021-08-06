@@ -50,6 +50,11 @@ public class userServiceImpl implements userService {
     }
 
     @Override
+    public boolean checkSessionTrainer(String username) {
+        return this.apidao.checkSessionTrainer(username);
+    }
+
+    @Override
     public boolean passwordChange(String username, String newPassword) {
 
         return this.apidao.passwordChange(username, newPassword);
@@ -61,6 +66,10 @@ public class userServiceImpl implements userService {
 
     public AssociatePortfolio getPortfolioBySalesForceId(String salesforceId){
         return(this.portfoliodao.getPortfolioBySalesforce(salesforceId));
+    }
+
+    public String getBatchID(String email){
+        return(this.associatedao.getBatchID(email));
     }
 
 }

@@ -109,6 +109,35 @@ public class apiDAOimpl implements apiDAO{
         return false;
     }
 
+    @Override
+    public boolean checkSessionTrainer(String username) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet result = null;
+
+        try {
+            //Establish the connection to the DB
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "SELECT email from employee where email=?";
+            stmt = conn.prepareStatement(SQL);
+
+            stmt.setString(1, username);
+
+            result = stmt.executeQuery();
+
+            Boolean exists = result.next();
+
+            return exists;
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+        }
+        return false;
+    }
+
     public static String getAllUsers()
     {
         BufferedReader reader;

@@ -38,7 +38,7 @@ public class APIDaoTest {
     public void testLoginUser(){
         Connection conn = null;
         PreparedStatement stmt = null;
-        String username = "mock17.associate655088fb-9cce-4c1b-add6-bbdd252465cd@mock.com";
+        String username = "mock0.associate2f03246f-e51b-4535-a261-77266abfd23f@mock.com";
         String password = "password";
         ResultSet result = null;
 

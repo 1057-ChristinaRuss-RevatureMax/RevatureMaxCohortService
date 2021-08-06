@@ -3,7 +3,6 @@ package controllers;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.json.Json;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -44,9 +43,7 @@ public class userController {
             }
             if (username != null && password != null && login) {
                 LoggerConfig.log(userController.class.getSimpleName(), "User logged in: " + username);
-//                String batchID = getBatchID(username);
                 context.sessionAttribute("session_username", username);
-//                context.sessionAttribute("batchID", batchID);
                 context.sessionAttribute("salesforceId", userservice.getSalesForceId(username));
                 context.json("{Success: login successful}").status(200);
                 context.redirect("/associateHome");
@@ -104,9 +101,14 @@ public class userController {
         }
     }
 
-    private static boolean validUser(String username){
+    public static boolean validUser(String username){
         boolean validation = userservice.checkSession(username);
         return validation;
+    }
+
+    public static String getBatchID(String username){
+        String batchID = userservice.getBatchID(username);
+        return batchID;
     }
 
 
@@ -119,6 +121,9 @@ public class userController {
         String username = context.sessionAttribute("session_username");
         boolean validation = userController.validUser(username);
         if (validation) {
+            String batchID = userController.getBatchID(username);
+            context.cookie("batchID", batchID);
+
             LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
             context.json("{Success: login successful} Now Home" + " " + username).status(200);
             context.render("/AssociateDashboard/associate-dashboard.html");
@@ -127,6 +132,7 @@ public class userController {
             context.redirect("/login");
         }
     }
+
     public static void editUser(Context context){
         if (context.method() == "POST") {
             String firstname = null;

@@ -38,7 +38,7 @@ public class ApiDatabaseConfig {
         for(int i=0; i<employeeList.size(); i++){
             id++;
             JSONObject user = new JSONObject(employeeList.get(i));
-            eImpl.createEmployee(id,user.getString("firstName"),user.getString("lastName"),user.getString("email"),"password");
+            eImpl.createEmployee(id,user.getString("firstName"),user.getString("lastName"),user.getString("email"), "password");
             portfoliodb.createOne(id);
             
         }

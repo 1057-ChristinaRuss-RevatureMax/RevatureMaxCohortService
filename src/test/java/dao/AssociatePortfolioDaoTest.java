@@ -22,17 +22,19 @@ public class AssociatePortfolioDaoTest {
         String lastName = "Test";
         String email = "mockito.test@revature.com";
         String pswrd = "cocktail";
+        String batchID = "TR-9999";
         ResultSet result;
 
         try {
             conn = ConnectionConfig.getConnection();
-            final String SQL = "insert into associate values(?, ?, ?, ?, ?)";
+            final String SQL = "insert into associate values(?, ?, ?, ?, ?,?)";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, salesforceId);
             stmt.setString(2, firstName);
             stmt.setString(3, lastName);
             stmt.setString(4, email);
-            stmt.setString(5, pswrd);
+            stmt.setString(5, batchID);
+            stmt.setString(6, pswrd);
             stmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();

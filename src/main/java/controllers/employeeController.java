@@ -1,13 +1,27 @@
 package controllers;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.json.Json;
-import services.employeeServiceImpl;
-
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import config.LoggerConfig;
 import io.javalin.http.Context;
+
+import driver.Main;
+import org.apache.commons.io.FileUtils;
+import services.userService;
+import services.userServiceImpl;
+import services.employeeServiceImpl;
+import dao.AssociateDaoImpl;
+import models.Associate;
+import models.AssociatePortfolio;
+
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class employeeController {
     static employeeServiceImpl employeeService = new employeeServiceImpl();
@@ -16,19 +30,25 @@ public class employeeController {
         return(true);
     }
 
-    public static void employeeHome(Context context){
+    public static void employeeHome(Context context) {
         String username = context.sessionAttribute("session_username");
-        boolean validation = employeeController.validUser(username);
+        System.out.println("User is verified");
+        boolean validation = employeeController.validUserTrainer(username);
         if (validation) {
             LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
             context.json("{Success: login successful} Now Home" + " " + username).status(200);
-            context.render("/trainer-profile/trainer-profile.html");
+            context.render("/trainer-dashboard/trainer-dashboard.html");
         }
         else {
             context.redirect("/login");
         }
     }
 
+    public static boolean validUserTrainer(String username){
+        userService service = new userServiceImpl();
+        boolean validUser = service.checkSessionTrainer(username);
+        return validUser;
+    }
     public static void editEmployee(Context context){
         if (context.method() == "POST") {
             String firstname = null;

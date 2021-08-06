@@ -1,17 +1,14 @@
 package dao;
 
 import config.ConnectionConfig;
-import config.RDSConnectionConfig;
 import config.ResourceClosers;
 import models.Associate;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AssociateDaoImpl implements AssociateDao {
 
@@ -44,7 +41,7 @@ public class AssociateDaoImpl implements AssociateDao {
     }
 
     @Override
-    public void createAssociate(String salesforceId, String firstName, String lastName, String email, String pass_word) {
+    public void createAssociate(String salesforceId, String firstName, String lastName, String email, String batchID, String pass_word) {
         Connection conn = null;
         PreparedStatement stmt = null;
 
@@ -56,7 +53,8 @@ public class AssociateDaoImpl implements AssociateDao {
             stmt.setString(2, firstName);
             stmt.setString(3, lastName);
             stmt.setString(4, email);
-            stmt.setString(5, pass_word);
+            stmt.setString(5, batchID);
+            stmt.setString(6, pass_word);
             stmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -84,7 +82,8 @@ public class AssociateDaoImpl implements AssociateDao {
                 associate.setFirstname(set.getString(2));
                 associate.setLastname(set.getString(3));
                 associate.setEmail(set.getString(4));
-                associate.setPassword(set.getString(5));
+                associate.setBatchID(set.getString(5));
+                associate.setPassword(set.getString(6));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -113,7 +112,8 @@ public class AssociateDaoImpl implements AssociateDao {
                 associate.setFirstname(set.getString(2));
                 associate.setLastname(set.getString(3));
                 associate.setEmail(set.getString(4));
-                associate.setPassword(set.getString(5));
+                associate.setBatchID(set.getString(5));
+                associate.setPassword(set.getString(6));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -123,6 +123,34 @@ public class AssociateDaoImpl implements AssociateDao {
             return associate;
         }
     }
+
+    @Override
+    public String getBatchID(String email){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet set = null;
+        String result = null;
+
+        try {
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "Select batchid from associate where email = ?";
+            stmt = conn.prepareStatement(SQL);
+            stmt.setString(1, email);
+            set = stmt.executeQuery();
+
+            while(set.next()) {
+                result = set.getString(1);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+            return result;
+        }
+    }
+
     public void updateAssociateFirstname(String salesforceId, String firstname) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -161,6 +189,7 @@ public class AssociateDaoImpl implements AssociateDao {
             ResourceClosers.closeStatement(stmt);
         }
     }
+
     public void updateAssociateEmail(String salesforceId, String email){
         Connection conn = null;
         PreparedStatement stmt = null;

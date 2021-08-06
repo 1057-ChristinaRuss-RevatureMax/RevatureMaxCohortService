@@ -25,17 +25,19 @@ public class AssociateDaoTest{
         String lastName = "Test";
         String email = "mockito.test@revature.com";
         String pswrd = "cocktail";
+        String batchID = "TR-9999";
         ResultSet result;
 
         try {
             conn = ConnectionConfig.getConnection();
-            final String SQL = "insert into associate values(?, ?, ?, ?, ?)";
+            final String SQL = "insert into associate values(?, ?, ?, ?, ?,?)";
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, salesforceId);
             stmt.setString(2, firstName);
             stmt.setString(3, lastName);
             stmt.setString(4, email);
-            stmt.setString(5, pswrd);
+            stmt.setString(5, batchID);
+            stmt.setString(6, pswrd);
             stmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,7 +67,8 @@ public class AssociateDaoTest{
                 associate.setFirstname(set.getString(2));
                 associate.setLastname(set.getString(3));
                 associate.setEmail(set.getString(4));
-                associate.setPassword(set.getString(5));
+                associate.setBatchID(set.getString(5));
+                associate.setPassword(set.getString(6));
 
             }
             Assert.assertEquals(associate.getPassword(), "cocktail");
@@ -82,7 +85,7 @@ public class AssociateDaoTest{
         Associate associate = new Associate();
         Connection conn = null;
         PreparedStatement stmt = null;
-        String email = "mock5.associateb1fb89f2-bab6-4719-bc1a-4f6cda2b209f@mock.com";
+        String email = "mockito.test@revature.com";
         ResultSet set = null;
 
         try {
@@ -96,9 +99,10 @@ public class AssociateDaoTest{
                 associate.setFirstname(set.getString(2));
                 associate.setLastname(set.getString(3));
                 associate.setEmail(set.getString(4));
-                associate.setPassword(set.getString(5));
+                associate.setBatchID(set.getString(5));
+                associate.setPassword(set.getString(6));
             }
-            Assert.assertEquals(associate.getPassword(), "password");
+            Assert.assertEquals(associate.getPassword(), "cocktail");
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

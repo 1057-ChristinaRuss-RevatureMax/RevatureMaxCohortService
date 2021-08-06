@@ -10,6 +10,7 @@ public class Associate {
     private String salesforceId;
     private AssociateAssignment[] associateAssignments;
     private String password;
+    private String batchID;
 
     public Associate(String email, String firstname, Flag flag, String lastname, String salesforceId, AssociateAssignment[] associateAssignments) {
         this.email = email;
@@ -62,6 +63,14 @@ public class Associate {
 
     public void setPassword(String password){
         this.password = password;
+    }
+
+    public String getBatchID(){
+        return batchID;
+    }
+
+    public void setBatchID(String batchID){
+        this.batchID = batchID;
     }
 
     public String getSalesforceId() {
