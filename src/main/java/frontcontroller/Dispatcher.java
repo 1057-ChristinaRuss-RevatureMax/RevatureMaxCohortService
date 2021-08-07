@@ -30,6 +30,11 @@ public class Dispatcher {
         });
         app.get("/editassociateprofile", userController::editUser);
         app.post("/editassociateprofile", userController::editUser);
+        app.get("/trainerprofile", ctx ->{
+            ctx.render("/trainer-profile/trainer-profile.html");
+        });
+        app.post("/edittrainerprofile", employeeController::editEmployee);
+        app.get("/edittrainerprofile", employeeController::editEmployee);
 //                associate-dashboard
 //                        trainer-dashboard
 //                                trainer-batch-view

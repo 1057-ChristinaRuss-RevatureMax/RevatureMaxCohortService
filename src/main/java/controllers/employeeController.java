@@ -18,6 +18,8 @@ import services.employeeServiceImpl;
 import dao.AssociateDaoImpl;
 import models.Associate;
 import models.AssociatePortfolio;
+import models.Employee;
+import models.EmployeePortfolio;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -72,10 +74,21 @@ public class employeeController {
             salesforceId = bodyJson.get("salesforceId").getAsInt();
 
             employeeService.editEmployee(salesforceId, firstname, lastname, email, bio, technology, location);
-
             //String salesforceId = context.sessionAttribute("salesforceId");
-
-
         }
+        else {
+            Map<String, String> map = new HashMap<String, String>();
+            Employee employee = employeeService.getEmployeeBySalesForceId(context.sessionAttribute("salesforceId"));
+            EmployeePortfolio portfolio = employeeService.getPortfolioBySalesForceId(context.sessionAttribute("salesforceId"));
+            map.put("firstName", employee.getFirstName());
+            map.put("lastName", employee.getLastName());
+            map.put("emailAddress", employee.getEmail());
+            map.put("bio", portfolio.getBio());
+            map.put("specialization", portfolio.getTechnology());
+            map.put("location", portfolio.getLocation());
+            context.json(map);
+            System.out.println("sent Json");
+        }
+
     }
 }

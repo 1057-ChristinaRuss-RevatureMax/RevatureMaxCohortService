@@ -7,6 +7,10 @@ public class EmployeePortfolio {
     private String technology;
     private String password;
 
+    public EmployeePortfolio(){
+        
+    }
+
     public EmployeePortfolio(String salesforceId, String bio, String location, String technology){
         this.salesforceId = salesforceId;
         this.bio = bio;

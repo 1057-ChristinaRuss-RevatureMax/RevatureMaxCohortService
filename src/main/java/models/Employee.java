@@ -3,6 +3,7 @@ package models;
 import java.util.Arrays;
 
 public class Employee {
+    private int salesforceId;
     private String email;
     private String firstName;
     private String lastName;
@@ -17,6 +18,14 @@ public class Employee {
 
     public Employee() {
 
+    }
+
+    public void setSalesForceId(int salesforceId){
+        this.salesforceId = salesforceId;
+    }
+
+    public int getSalesForceId(){
+        return salesforceId;
     }
 
     public String getEmail() {

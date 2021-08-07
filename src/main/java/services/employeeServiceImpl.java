@@ -1,6 +1,8 @@
 package services;
 import dao.EmployeeDaoImpl;
 import dao.EmployeePortfolioDao;
+import models.Employee;
+import models.EmployeePortfolio;
 
 public class employeeServiceImpl {
     EmployeeDaoImpl employeedao;
@@ -17,6 +19,14 @@ public class employeeServiceImpl {
     public int getSalesForceId(String email){
         return employeedao.getSalesForceId(email);
 
+    }
+
+    public Employee getEmployeeBySalesForceId(int salesforceId){
+        return employeedao.getEmployeeBySalesForceId(salesforceId);
+    }
+
+    public EmployeePortfolio getPortfolioBySalesForceId(int salesforceId){
+        return portfoliodao.getPortfolioBySalesForceId(salesforceId);
     }
     
     public void editEmployee(int salesforceId, String firstname, String lastname, String email, String bio, String technology, String location){
