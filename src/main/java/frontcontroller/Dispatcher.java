@@ -25,6 +25,9 @@ public class Dispatcher {
         app.get("/employeeHome", employeeController::employeeHome);
         app.get("/passwordchange", userController::passwordChange);
         app.post("/passwordchange", userController::passwordChange);
+        app.get("/associateprofile", ctx ->{
+        	ctx.render("/associate-profile/associate-profile.html");
+        });
         app.get("/editassociateprofile", userController::editUser);
         app.post("/editassociateprofile", userController::editUser);
 //                associate-dashboard

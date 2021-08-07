@@ -56,7 +56,7 @@ contactInfoForm.onsubmit = function (form) {
 
     // get the rest of the info from the elements on the page
     newInfo["bio"] = bio.innerText
-    newInfo["favoriteTechnologies"] = [tech1.innerText, tech2.innerText, tech3.innerText]
+    newInfo["favoriteTechnologies"] = tech1.innerText + '~' + tech2.innerText + '~' + tech3.innerText
     newInfo["preference"] = preference.innerText
 
     // construct an HTTP request
@@ -89,7 +89,7 @@ bioForm.onsubmit = function (form) {
     newInfo["firstName"] = firstName.innerText
     newInfo["lastName"] = lastName.innerText
     newInfo["emailAddress"] = email.innerText
-    newInfo["favoriteTechnologies"] = [tech1.innerText, tech2.innerText, tech3.innerText]
+    newInfo["favoriteTechnologies"] = tech1.innerText + '~' + tech2.innerText + '~' + tech3.innerText
     newInfo["preference"] = preference.innerText
 
     // construct an HTTP request
@@ -116,7 +116,7 @@ favTechnologiesForm.onsubmit = function (form) {
     let newInfo = {}
 
     // get the info from the form that we submitted
-    newInfo["favoriteTechnologies"] = [this["tech1"].value, this["tech2"].value, this["tech3"].value]
+    newInfo["favoriteTechnologies"] = this["tech1"].value + '~' + this["tech2"].value + '~' + this["tech3"].value
     newInfo["preference"] = this["preference"].value
 
     // get the rest of the info from the elements on the page
@@ -146,6 +146,7 @@ favTechnologiesForm.onsubmit = function (form) {
 async function getAssociateInfo(id) {
     let url = "http://localhost:9001/editassociateprofile"
     let response = await fetch(url)
+    console.log(response)
     let associateInfo = await response.json()
     console.log("associate info = " + associateInfo)
     firstName.innerText = associateInfo["firstName"]
@@ -157,7 +158,7 @@ async function getAssociateInfo(id) {
     bio.innerText = associateInfo["bio"]
     bio.style.height = "fit-content"
     newBio.value = associateInfo["bio"]
-    let favTechs = associateInfo["favoriteTechnologies"]
+    let favTechs = associateInfo["favoriteTechnologies"].split("~", 3)
     tech1.innerText = favTechs[0]
     newTech1.value = favTechs[0]
     tech2.innerText = favTechs[1]
