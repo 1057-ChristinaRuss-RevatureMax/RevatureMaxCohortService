@@ -1,8 +1,11 @@
 package controllers;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.json.Json;
+import services.employeeServiceImpl;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -71,7 +74,7 @@ public class employeeController {
             technology = bodyJson.get("technology").getAsString();
             location = bodyJson.get("location").getAsString();
             //Sales force id will eventually come from session, this is just for testing
-            salesforceId = bodyJson.get("salesforceId").getAsInt();
+            salesforceId = context.sessionAttribute("salesforceId");
 
             employeeService.editEmployee(salesforceId, firstname, lastname, email, bio, technology, location);
             //String salesforceId = context.sessionAttribute("salesforceId");
@@ -89,6 +92,5 @@ public class employeeController {
             context.json(map);
             System.out.println("sent Json");
         }
-
     }
 }
