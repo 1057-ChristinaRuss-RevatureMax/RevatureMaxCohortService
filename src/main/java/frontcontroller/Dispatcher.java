@@ -26,12 +26,12 @@ public class Dispatcher {
         app.get("/passwordchange", userController::passwordChange);
         app.post("/passwordchange", userController::passwordChange);
         app.get("/associateprofile", ctx ->{
-        	ctx.render("/associate-profile/associate-profile.html");
+        	//ctx.render("/associate-profile/associate-profile.html");
         });
         app.get("/editassociateprofile", userController::editUser);
         app.post("/editassociateprofile", userController::editUser);
         app.get("/trainerprofile", ctx ->{
-            ctx.render("/trainer-profile/trainer-profile.html");
+            //ctx.render("/trainer-profile/trainer-profile.html");
         });
         app.post("/edittrainerprofile", employeeController::editEmployee);
         app.get("/edittrainerprofile", employeeController::editEmployee);
