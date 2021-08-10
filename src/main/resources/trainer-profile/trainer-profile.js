@@ -32,12 +32,8 @@ cancelBio.onclick = resetBioForm
 editTrainingInfo.onclick = setupTrainingInfoForm
 cancelTrainingInfo.onclick = resetTrainingInfoForm
 
-// mock session variable for user
-//const currentUser = "trainerID"
-
 // get the info for the current user
-getTrainerInfo(currentUser)
-setFormActions(currentUser)
+getTrainerInfo()
 
 contactInfoForm.onsubmit = function (form) {
     // stop the regular form submission
@@ -52,7 +48,7 @@ contactInfoForm.onsubmit = function (form) {
 
     // get the rest of the info from the elements on the page
     newInfo["bio"] = bio.innerText
-    newInfo["specialization"] = specialization.innerText
+    newInfo["technology"] = specialization.innerText
     newInfo["location"] = userLocation.innerText
 
     // construct an HTTP request
@@ -65,7 +61,7 @@ contactInfoForm.onsubmit = function (form) {
 
     xhr.onloadend = function () {
         // update the info on the page
-        getTrainerInfo(currentUser)
+        getTrainerInfo()
 
         // reset the form elements
         resetContactInfoForm()
@@ -85,7 +81,7 @@ bioForm.onsubmit = function (form) {
     newInfo["firstName"] = firstName.innerText
     newInfo["lastName"] = lastName.innerText
     newInfo["emailAddress"] = email.innerText
-    newInfo["specialization"] = specialization.innerText
+    newInfo["technology"] = specialization.innerText
     newInfo["location"] = userLocation.innerText
 
     // construct an HTTP request
@@ -98,7 +94,7 @@ bioForm.onsubmit = function (form) {
 
     xhr.onloadend = function () {
         // update the info on the page
-        getTrainerInfo(currentUser)
+        getTrainerInfo()
 
         // reset the form elements
         resetBioForm()
@@ -112,7 +108,7 @@ trainingInfoForm.onsubmit = function (form) {
     let newInfo = {}
 
     // get the info from the form that we submitted
-    newInfo["specialization"] = this["specialization"].value
+    newInfo["technology"] = this["specialization"].value
     newInfo["location"] = this["location"].value
 
     // get the rest of the info from the elements on the page
@@ -132,15 +128,15 @@ trainingInfoForm.onsubmit = function (form) {
 
     xhr.onloadend = function () {
         // update the info on the page
-        getTrainerInfo(currentUser)
+        getTrainerInfo()
 
         // reset the form elements
         resetTrainingInfoForm()
     }
 }
 
-async function getTrainerInfo(id) {
-    let url = "http://localhost:5000/trainer/" + id
+async function getTrainerInfo() {
+    let url = "http://localhost:9001/edittrainerprofile"
     let response = await fetch(url)
     let trainerInfo = await response.json()
     firstName.innerText = trainerInfo["firstName"]
@@ -227,10 +223,4 @@ function resetTrainingInfoForm() {
     userLocation.style.display = "inline"
     newSpecialization.style.display = "none"
     newLocation.style.display = "none"
-}
-
-function setFormActions(id){
-    contactInfoForm.action = contactInfoForm.action + id
-    bioForm.action = bioForm.action + id
-    trainingInfoForm.action = trainingInfoForm.action + id
 }

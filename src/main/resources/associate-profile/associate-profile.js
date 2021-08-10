@@ -1,4 +1,3 @@
-// get all the page elements we need to manipulate
 const editContactInfo = document.getElementById("editContactInfo")
 const cancelContactInfo = document.getElementById("cancelContactInfo")
 const submitContactInfo = document.getElementById("submitContactInfo")
@@ -36,12 +35,8 @@ cancelBio.onclick = resetBioForm
 editFavTechnologies.onclick = setupFavTechnologiesForm
 cancelFavTechnologies.onclick = resetFavTechnologiesForm
 
-// mock session variable for user
-const currentUser = "userID"
-
 // get the info for the current user
-getAssociateInfo(currentUser)
-//setFormActions(currentUser)
+getAssociateInfo()
 
 contactInfoForm.onsubmit = function (form) {
     // stop the regular form submission
@@ -69,7 +64,7 @@ contactInfoForm.onsubmit = function (form) {
 
     xhr.onloadend = function () {
         // update the info on the page
-        getAssociateInfo(currentUser)
+        getAssociateInfo()
 
         // reset the form elements
         resetContactInfoForm()
@@ -102,7 +97,7 @@ bioForm.onsubmit = function (form) {
 
     xhr.onloadend = function () {
         // update the info on the page
-        getAssociateInfo(currentUser)
+        getAssociateInfo()
 
         // reset the form elements
         resetBioForm()
@@ -136,14 +131,14 @@ favTechnologiesForm.onsubmit = function (form) {
 
     xhr.onloadend = function () {
         // update the info on the page
-        getAssociateInfo(currentUser)
+        getAssociateInfo()
 
         // reset the form elements
         resetFavTechnologiesForm()
     }
 }
 
-async function getAssociateInfo(id) {
+async function getAssociateInfo() {
     let url = "http://localhost:9001/editassociateprofile"
     let response = await fetch(url)
     console.log(response)
@@ -248,10 +243,4 @@ function resetFavTechnologiesForm() {
     newTech2.style.display = "none"
     newTech3.style.display = "none"
     newPreference.style.display = "none"
-}
-
-function setFormActions(id){
-    contactInfoForm.action = contactInfoForm.action + id
-    bioForm.action = bioForm.action + id
-    favTechnologiesForm.action = favTechnologiesForm.action + id
 }
