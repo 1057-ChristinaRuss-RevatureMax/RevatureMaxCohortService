@@ -60,11 +60,11 @@ public class userController {
                 context.sessionAttribute("session_username", username);
                 LoggerConfig.log(userController.class.getSimpleName(), "User login failed, username: " + username);
                 context.sessionAttribute("session_username", "invalid");
-                context.redirect("/login");
+                context.redirect("https://revature-max.s3.us-east-1.amazonaws.com/index/index.html");
             }
 
         } else {
-            context.redirect("/login");
+            context.redirect("https://revature-max.s3.us-east-1.amazonaws.com/index/index.html");
         }
     }
 
