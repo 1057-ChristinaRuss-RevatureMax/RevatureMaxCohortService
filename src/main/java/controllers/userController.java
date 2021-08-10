@@ -122,6 +122,7 @@ public class userController {
         boolean validation = userController.validUser(username);
         if (validation) {
             String batchID = userController.getBatchID(username);
+            context.cookie("email", username);
             context.cookie("batchID", batchID);
 
             LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
