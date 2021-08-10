@@ -64,7 +64,7 @@ public class userController {
             }
 
         } else {
-            context.render("/index/index.html");
+            //context.render("/index/index.html");
         }
     }
 
@@ -97,7 +97,7 @@ public class userController {
 
 
         } else {
-            context.render("/password-change/password-change.html");
+            //context.render("/password-change/password-change.html");
         }
     }
 
@@ -127,7 +127,7 @@ public class userController {
 
             LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
             context.json("{Success: login successful} Now Home" + " " + username).status(200);
-            context.render("/AssociateDashboard/associate-dashboard.html");
+            //context.render("/AssociateDashboard/associate-dashboard.html");
         }
         else {
             context.redirect("/login");
