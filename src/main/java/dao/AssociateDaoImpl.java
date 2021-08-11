@@ -25,6 +25,7 @@ public class AssociateDaoImpl implements AssociateDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "select salesforceId from associate";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             set = stmt.executeQuery();
             while(set.next()) {
@@ -48,6 +49,7 @@ public class AssociateDaoImpl implements AssociateDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "insert into associate values(?, ?, ?, ?, ?) ON CONFLICT DO NOTHING";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, salesforceId);
             stmt.setString(2, firstName);
@@ -74,6 +76,7 @@ public class AssociateDaoImpl implements AssociateDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "select * from associate where salesforceId = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, salesforceId);
             set = stmt.executeQuery();
@@ -104,6 +107,7 @@ public class AssociateDaoImpl implements AssociateDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "select * from associate where email = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, email);
             set = stmt.executeQuery();
@@ -134,6 +138,7 @@ public class AssociateDaoImpl implements AssociateDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "Select batchid from associate where email = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, email);
             set = stmt.executeQuery();
@@ -159,6 +164,7 @@ public class AssociateDaoImpl implements AssociateDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "Update associate set firstname = ? where salesforceId = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, firstname);
             stmt.setString(2, salesforceId);
@@ -178,6 +184,7 @@ public class AssociateDaoImpl implements AssociateDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "Update associate set lastname = ? where salesforceId = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, lastname);
             stmt.setString(2, salesforceId);
@@ -198,6 +205,7 @@ public class AssociateDaoImpl implements AssociateDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "Update associate set email = ? where salesforceId = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, email);
             stmt.setString(2, salesforceId);

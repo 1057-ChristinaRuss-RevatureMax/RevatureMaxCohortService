@@ -20,6 +20,7 @@ public class EmployeeDaoImpl {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "insert into employee values(?, ?, ?, ?, ?) ON CONFLICT DO NOTHING";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setInt(1, salesforceId);
             stmt.setString(2, firstName);
@@ -29,7 +30,8 @@ public class EmployeeDaoImpl {
             stmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
+        }
+        finally {
             ResourceClosers.closeConnection(conn);
             ResourceClosers.closeStatement(stmt);
         }
@@ -44,6 +46,7 @@ public class EmployeeDaoImpl {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "select salesforceId from employee where email = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, email);
             set = stmt.executeQuery();
@@ -68,6 +71,7 @@ public class EmployeeDaoImpl {
             //Establish the connection to the DB
             conn = ConnectionConfig.getConnection();
             final String SQL = "SELECT email, pswrd FROM employee where email=? AND pswrd=?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, username);
@@ -97,6 +101,7 @@ public class EmployeeDaoImpl {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "select * from employee where salesforceId = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setInt(1, salesforceId);
             set = stmt.executeQuery();
@@ -123,6 +128,7 @@ public class EmployeeDaoImpl {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "Update employee set firstname = ? where salesforceId = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, firstname);
             stmt.setInt(2, salesforceId);
@@ -142,6 +148,7 @@ public class EmployeeDaoImpl {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "Update employee set lastname = ? where salesforceId = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, lastname);
             stmt.setInt(2, salesforceId);
@@ -161,6 +168,7 @@ public class EmployeeDaoImpl {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "Update employee set email = ? where salesforceId = ?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
             stmt.setString(1, email);
             stmt.setInt(2, salesforceId);

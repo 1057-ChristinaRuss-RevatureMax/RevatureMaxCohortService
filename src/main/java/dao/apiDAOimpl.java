@@ -32,6 +32,7 @@ public class apiDAOimpl implements apiDAO{
             //Establish the connection to the DB
             conn = ConnectionConfig.getConnection();
             final String SQL = "SELECT email, pswrd FROM associate where email=? AND pswrd=?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, username);
@@ -62,6 +63,7 @@ public class apiDAOimpl implements apiDAO{
             //Establish the connection to the DB
             conn = ConnectionConfig.getConnection();
             final String SQL = "UPDATE associate set pswrd = ? where email=?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, newPassword);
@@ -90,6 +92,7 @@ public class apiDAOimpl implements apiDAO{
             //Establish the connection to the DB
             conn = ConnectionConfig.getConnection();
             final String SQL = "SELECT email from associate where email=?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, username);
@@ -119,6 +122,7 @@ public class apiDAOimpl implements apiDAO{
             //Establish the connection to the DB
             conn = ConnectionConfig.getConnection();
             final String SQL = "SELECT email from employee where email=?";
+            assert conn != null;
             stmt = conn.prepareStatement(SQL);
 
             stmt.setString(1, username);
@@ -173,6 +177,7 @@ public class apiDAOimpl implements apiDAO{
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            assert connection != null;
             connection.disconnect();
         }
         String paramBody = new String(responseContent);
@@ -214,6 +219,7 @@ public class apiDAOimpl implements apiDAO{
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            assert connection != null;
             connection.disconnect();
         }
         String paramBody = new String(responseContent);

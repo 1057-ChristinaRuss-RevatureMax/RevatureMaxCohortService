@@ -27,6 +27,7 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         try {
 			conn = ConnectionConfig.getConnection();
 			final String SQL = "Insert into associate_portfolio values (?, NULL, NULL, NULL) ON CONFLICT DO nothing";
+			assert conn != null;
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, salesforceId);
 			stmt.execute();
@@ -47,6 +48,7 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         try {
 			conn = ConnectionConfig.getConnection();
 			final String SQL = "update associate_portfolio set bio = ? where salesforceId = ?";
+			assert conn != null;
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, bio);
 			stmt.setString(2, salesforceId);
@@ -67,6 +69,7 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         try {
 			conn = ConnectionConfig.getConnection();
 			final String SQL = "update associate_portfolio set preference = ? where salesforceId = ?";
+			assert conn != null;
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, preference);
 			stmt.setString(2, salesforceId);
@@ -86,6 +89,7 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         try {
 			conn = ConnectionConfig.getConnection();
 			final String SQL = "update associate_portfolio set favorite_technologies = ? where salesforceId = ?";
+			assert conn != null;
 			stmt = conn.prepareStatement(SQL);
 			stmt.setString(1, technologies);
 			stmt.setString(2, salesforceId);
@@ -108,7 +112,8 @@ public class AssociatePortfolioDaoImpl implements AssociatePortfolioDao {
         try {
             conn = ConnectionConfig.getConnection();
             final String SQL = "select * from associate_portfolio where salesforceId = ?";
-            stmt = conn.prepareStatement(SQL);
+			assert conn != null;
+			stmt = conn.prepareStatement(SQL);
             stmt.setString(1, salesforceId);
             set = stmt.executeQuery();
             while(set.next()) {
