@@ -39,10 +39,10 @@ public class employeeController {
         if (validation) {
             LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
             context.json("{Success: login successful} Now Home" + " " + username).status(200);
-            
+
         }
         else {
-            context.redirect("https://revature-max.s3.us-east-1.amazonaws.com/index/index.html");
+            context.redirect("http://revature-max.s3.us-east-1.amazonaws.com/index/index.html");
         }
     }
 
