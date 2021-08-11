@@ -1,8 +1,33 @@
+@font-face { /* thinnest */
+	font-family: "Futura Std, Book"; 
+	src: url("./revature-styles/Futura-Std-Book.otf") format("opentype");
+	font-style: normal;
+}
+
+@font-face { /* thinner */
+	font-family: "Futura Std, Medium"; 
+	src: url("./revature-styles/Futura-Std-Medium.otf") format("opentype");
+	font-style: normal;
+}
+
+@font-face { /* thicker */
+	font-family: "Futura Std, Heavy"; 
+	src: url("./revature-styles/Futura-Std-Heavy.otf") format("opentype");
+	font-style: normal;
+}
+
+@font-face { /* thickest */
+	font-family: "Futura Std, Bold"; 
+	src: url("./revature-styles/Futura-Std-Bold.otf") format("opentype");
+	font-style: normal;
+}
+
 body{
+	background: linear-gradient(#FFFFFF 20%, #F26925);
   height: 100vh;
 }
 .info{
-    background-color: #f26925;
+    background: rgba(242, 105, 38, 0.8);
     height: 2em;
     width: 24em;
     border: 1px solid black;
@@ -15,6 +40,26 @@ body{
 }
 .row1{
     display:inline-block;
+    padding-top: .25em;
+}
+.row2{
+  width: 49em;
+  padding-top: .25em;
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(242, 105, 38, 0.9) inset;
+}
+#editFirstName, #editLastName, #editPreference{
+  width: 17em;
+}
+#editEmail{
+  width: 40em;
 }
 .col1{
     margin-left: 0;
@@ -34,7 +79,7 @@ p{
     font-size: 16px;
 }
 #updateBio > p, #newBio{
-    background-color: #f26925;
+    background: rgba(242, 105, 38, 0.8);
     height: fit-content;
     min-height: 5em;
     width: 48em;
@@ -45,15 +90,18 @@ p{
     text-align:left;
 }
 button, input, select, textarea{
-    background-color: #f26925;
+    background: rgba(242, 105, 38, 0);
     height: 1.5em;
     border: 1px solid black;
     border-radius: .5em;
     font-family: "Futura Std, Medium", sans-serif;
     font-size: 16px;
 }
+button, #submitFavTechnologies, #submitContactInfo, #submitBio{
+  background: rgba(242, 105, 38, 0.8);
+}
 #favTechnologies > p{
-    background-color: #f26925;
+    background: rgba(242, 105, 38, 0.8);
     height: 2em;
     width: 24em;
     display:inline;
@@ -66,7 +114,7 @@ ul{
 li.tech, ul > input{
     font-family: "Futura Std, Medium", sans-serif;
     font-size: 16px;
-    background-color: #f26925;
+    background: rgba(242, 105, 38, 0.8);
     height: 2em;
     width: 24em;
     border: 1px solid black;
@@ -78,7 +126,8 @@ li.tech, ul > input{
 form{
     border: 1px solid black;
     border-radius: 1em;
-    background-color: #B9B9BA;
+    background: rgba(185, 185, 186, 0.8);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
     padding: 1em;
     margin-left: auto;
     margin-right: auto;
