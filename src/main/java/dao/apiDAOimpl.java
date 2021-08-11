@@ -173,6 +173,7 @@ public class apiDAOimpl implements apiDAO{
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            assert connection != null;
             connection.disconnect();
         }
         String paramBody = new String(responseContent);
@@ -214,6 +215,7 @@ public class apiDAOimpl implements apiDAO{
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            assert connection != null;
             connection.disconnect();
         }
         String paramBody = new String(responseContent);
