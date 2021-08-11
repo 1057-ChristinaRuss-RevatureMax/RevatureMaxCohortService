@@ -13,32 +13,6 @@ import java.sql.SQLException;
 
 public class AssociatePortfolioDaoTest {
 
-    @BeforeSuite(groups = {"requireDB"})
-    public void beforeSuite(){
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        String bio = "I prefer to study on the weekends";
-        String favorite_technologies = "Java, HTML, CSS";
-        String preferences = "New York";
-        String salesforceid = "12345";
-
-        try {
-            conn = ConnectionConfig.getConnection();
-            stmt = conn.prepareStatement("INSERT into associate_portfolio VALUES(?,?,?,?)");
-            stmt.setString(1, salesforceid);
-            stmt.setString(2,bio);
-            stmt.setString(3,favorite_technologies);
-            stmt.setString(4,preferences);
-            stmt.execute();
-
-        } catch (SQLException e){
-            e.printStackTrace();
-        } finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
-    }
-
     @Test(groups = {"requireDB"})
     public void testUpdateBio(){
         Connection conn = null;
@@ -115,18 +89,21 @@ public class AssociatePortfolioDaoTest {
     public void afterSuite(){
         Connection conn = null;
         PreparedStatement stmt = null;
-        String salesforceid = "12345";
-
+        String salesforceId = "SF-2292";
         try {
             conn = ConnectionConfig.getConnection();
-            stmt = conn.prepareStatement("DELETE from associate_portfolio WHERE salesforceid = ?");
-            stmt.setString(1, salesforceid);
+            final String SQL = "update associate_portfolio set bio = ?, salesforceid = ? where salesforceId = ?";
+            stmt = conn.prepareStatement(SQL);
+            stmt.setString(1, null);
+            stmt.setString(2, salesforceId);
+            stmt.setString(3, "12345");
             stmt.execute();
-            System.out.println("System successfully reset");
+            System.out.println("System successfully setup");
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
+            Assert.fail();
+        }finally {
             ResourceClosers.closeConnection(conn);
             ResourceClosers.closeStatement(stmt);
         }
