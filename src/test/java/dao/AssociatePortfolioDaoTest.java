@@ -25,10 +25,10 @@ public class AssociatePortfolioDaoTest {
         try {
             conn = ConnectionConfig.getConnection();
             stmt = conn.prepareStatement("INSERT into associate_portfolio VALUES(?,?,?,?)");
-            stmt.setString(1, bio);
-            stmt.setString(2,favorite_technologies);
-            stmt.setString(3,preferences);
-            stmt.setString(4,salesforceid);
+            stmt.setString(1, salesforceid);
+            stmt.setString(2,bio);
+            stmt.setString(3,favorite_technologies);
+            stmt.setString(4,preferences);
             stmt.execute();
 
         } catch (SQLException e){
