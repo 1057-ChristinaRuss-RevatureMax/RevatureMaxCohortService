@@ -1,0 +1,91 @@
+/*
+primary colors:
+ * #F26925 / rgb 242, 105,  37 (orange)
+ * #FFFFFF / rgb 255, 255, 255 (white)
+ * #474C55 / rgb  71,  76,  85 (dark gray)
+
+secondary colors:
+ * #72A4C2 / rgb 114, 164, 194 (blue)
+ * #FCB414 / rgb 252, 180,  20 (yellow)
+ * #B9B9BA / rgb 185, 185, 186 (light gray)
+
+reminder:
+ * please use rem/em for units
+ * primary colors are for most of the page
+ * secondary colors are for highlights/accents
+ */
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 1.3rem;
+}
+ 
+html {
+  background-color: #B9B9BA;
+  background: linear-gradient(to bottom right, #72A4C2 0%, #B9B9BA 30%);
+}
+
+input {
+  font-family: "Futura Std, Medium", sans-serif;
+  background-color: rgba(185, 185, 186, .1);
+  border: none;
+  padding: 1.2em 6em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: .25em;
+  -webkit-border-radius: .25em;
+  border-radius: .25em;
+}
+
+input[type=text], input[type=password] {
+  width: 85%;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  font-family: "Futura Std, Bold", sans-serif;
+  background-color: #474C55;
+  border: none;
+  color: #FFFFFF;
+  padding: 1em 5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  box-shadow: 0rem .1rem .2rem 0rem rgba( 71,  76,  85, 0.3);
+  border-radius: .6rem;
+  margin: .25rem 2rem 4rem 2rem;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  background-color: #F26925;
+}
+
+input:active  {
+  transform: scale(0.95);
+}
+
+input[type=text]:focus , input[type=password]:focus {
+  background-color: #fff;
+  border-bottom: .2rem solid #F26925;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #474C55;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #474C55;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #474C55;
+}
