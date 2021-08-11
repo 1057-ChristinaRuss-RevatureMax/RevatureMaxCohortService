@@ -19,7 +19,7 @@ public class JavalinConfig {
 //     */
     public static Javalin getApp(int port) {
         Javalin app = Javalin.create(config -> config.sessionHandler(SessionConfig::fileSessionHandler)
-                .enableCorsForOrigin("127.0.0.1")
+                .enableCorsForAllOrigins()
                 .server(()->{
                     // configure https/ssl if needed
                     return new Server();
