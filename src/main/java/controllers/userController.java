@@ -60,11 +60,11 @@ public class userController {
                 context.sessionAttribute("session_username", username);
                 LoggerConfig.log(userController.class.getSimpleName(), "User login failed, username: " + username);
                 context.sessionAttribute("session_username", "invalid");
-                context.redirect("/login");
+                context.redirect("https://revature-max.s3.us-east-1.amazonaws.com/index/index.html");
             }
 
         } else {
-            context.render("/index/index.html");
+            context.redirect("https://revature-max.s3.us-east-1.amazonaws.com/index/index.html");
         }
     }
 
@@ -92,12 +92,12 @@ public class userController {
                 context.redirect("/passwordchange");
             }
             else if (userservice.passwordChange(user, newPassword)) {
-                context.redirect("http://localhost:9001/associateHome");
+                context.redirect("http://18.209.14.19:9001/associateHome");
             };
 
 
         } else {
-            context.render("/password-change/password-change.html");
+            context.redirect("/password-change/password-change.html");
         }
     }
 
@@ -127,7 +127,7 @@ public class userController {
 
             LoggerConfig.log(userController.class.getSimpleName(), "Current Session user is:  " + username);
             context.json("{Success: login successful} Now Home" + " " + username).status(200);
-            context.render("/AssociateDashboard/associate-dashboard.html");
+            context.redirect("https://revature-max.s3.us-east-1.amazonaws.com/associate-dashboard/associate-dashboard.html");
         }
         else {
             context.redirect("/login");
@@ -156,7 +156,7 @@ public class userController {
             String salesforceId = context.sessionAttribute("salesforceId");
 
             userservice.editUser(salesforceId, firstname, lastname, email, bio, favorite_tech, preference);
-            context.redirect("http://localhost:9001/associateHome");
+            context.redirect("http://18.209.14.19:9001/associateHome");
         }
         else{
             Map<String, String> map = new HashMap<String, String>();
