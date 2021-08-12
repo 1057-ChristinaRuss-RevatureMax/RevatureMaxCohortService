@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="trainer-profile.css" />
-    <link rel="stylesheet" href="../revature-styles/main.css" />
     <link rel="shortcut icon" type="image/png" href=".\revature-styles\favicon.png" />
     <title>RevatureMax - Profile</title>
 </head>
@@ -21,7 +20,7 @@
         <div class="navbar-container">
             <div class="navbar-top">
                 <div class="topnav">
-                    <a class="active" href="#home">Home</a>
+                    <a class="active" href="http://localhost:9001/employeeHome">Home</a>
                     <a href="#news">News</a>
                     <a href="#contact">Contact</a>
                     <a href="#about">About</a>
@@ -68,7 +67,7 @@
             <input id="editEmail" name="emailAddress" type="email" style="display: none;">
         </div>
     </form>
-    <form id="updateBio" name="updateBio" action="http://18.209.14.19:9001/edittrainerprofile" method="POST">
+    <form id="updateBio" name="updateBio" action="http://localhost:9001/edittrainerprofile" method="POST">
         <h1>About Me</h1>
         <img src="./revature-styles/edit.png" id="editBio">
         <input type="submit" value="Update" id="submitBio" style="display: none;">
@@ -76,17 +75,17 @@
         <p id="userBio"></p>
         <textarea id="newBio" name="bio" wrap="hard" minlength="1" style="display: none;"></textarea>
     </form>
-    <form id="updateTrainingInfo" name="updateTrainingInfo" action="http://18.209.14.19:9001/edittrainerprofile" method="POST">
+    <form id="updateTrainingInfo" name="updateTrainingInfo" action="http://localhost:9001/edittrainerprofile" method="POST">
         <h1>Training Info</h1>
         <img src="./revature-styles/edit.png" id="editTrainingInfo">
         <input type="submit" value="Update" id="submitTrainingInfo" style="display: none;">
         <button type="button" id="cancelTrainingInfo" style="display: none;">Cancel</button><br>
-        <div class="info row1 col1 trainingInfo">
-            <h3>Technology Specialization: </h3>
+        <div class="info trainingInfo">
+            <h3>Tech Specialization: </h3>
             <p id="userSpecialization"></p>
             <input id="editUserSpecialization" name="specialization" type="text" style="display: none;">
         </div>
-        <div class="info row2 col1 trainingInfo">
+        <div class="info trainingInfo">
             <h3>Training Location: </h3>
             <p id="userLocation"></p>
             <input id="editUserLocation" name="location" type="text" style="display: none;">

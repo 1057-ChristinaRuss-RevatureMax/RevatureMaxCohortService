@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Background color experiment</title>
     <link rel="stylesheet" href="trainer-dashboard.css">
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 </head>
 <body>
@@ -36,8 +36,10 @@
                     <span>Statistics</span>
                 </li>
                 <li class="tab" data-tab-target="#settings-tab">
+                    <a href="http://localhost:9001/trainerprofile" style="text-decoration:none">
                     <img src="/img/icons8-settings-30.png" alt="Settings Icon">
                     <span>Settings</span>
+                    </a>
                 </li>
             </ul>
 
@@ -83,8 +85,8 @@
 
                         <div id="statistics-tab" data-tab-content>
                             <div class="btn-container">
-                                <button class="tablinks active" style="border-top-left-radius: 20px;" onClick="changeTab(event, 'chart')">Chart</button>
-                                <button class="tablinks" style="border-top-right-radius: 20px;" onClick="changeTab(event, 'table')">Table</button>
+                                <button class="tablinks active" style="border-top-left-radius: 16px;" onClick="changeTab(event, 'chart')">Chart</button>
+                                <button class="tablinks" style="border-top-right-radius: 16px;" onClick="changeTab(event, 'table')">Table</button>
                             </div>
                             <div id="chart" class="tabcontent">
                                 <div class="center-chart">
@@ -104,7 +106,7 @@
                                             <div style="display:flex; justify-content: center;">
                                                 <div class="chart-title">Associate Grades</div>
                                             </div>
-                                            <canvas id="gradesChart" style="min-height: 350px; min-width:600px;"></canvas>
+                                            <canvas id="gradesChart" style="min-height: 350px; min-width:600px; max-height: 350px; max-width: 600px;"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -114,8 +116,12 @@
                                     <div class="table-container">
                                         <div>
                                             <table id="statistics-table" class="tdashtable">
-                                                <thead>
-                                                    <tr id="stat_table_head">
+                                                <thead id="stat-table-head">
+                                                    <tr>
+                                                        <th>Assignment</th>
+                                                        <th>Week</th>
+                                                        <th>Score</th>
+                                                        <th>Batch Average</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="stat_table">
@@ -150,8 +156,6 @@
                         
 
                         <div id="settings-tab" data-tab-content>
-                            <h1>Settings</h1>
-                            <p>Content in the Settings</p>
                         </div>
 
                     </div>

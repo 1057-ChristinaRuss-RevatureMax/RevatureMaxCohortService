@@ -136,7 +136,7 @@ trainingInfoForm.onsubmit = function (form) {
 }
 
 async function getTrainerInfo() {
-    let url = "http://18.209.14.19:9001/edittrainerprofile"
+    let url = "http://localhost:9001/edittrainerprofile"
     let response = await fetch(url)
     let trainerInfo = await response.json()
     firstName.innerText = trainerInfo["firstName"]

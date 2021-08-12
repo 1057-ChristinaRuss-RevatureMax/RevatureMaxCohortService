@@ -4,7 +4,6 @@ primary colors:
  * #F26925 / rgb 242, 105,  37 (orange)
  * #FFFFFF / rgb 255, 255, 255 (white)
  * #474C55 / rgb  71,  76,  85 (dark gray)
-
 secondary colors:
  * #72A4C2 / rgb 114, 164, 194 (blue)
  * #FCB414 / rgb 252, 180,  20 (yellow)
@@ -19,6 +18,31 @@ secondary colors:
     
 }
 
+#associate-table-data {
+
+    display:block;
+    width: 100%;
+    overflow: auto;
+    max-height: 350px;
+      
+}
+
+#associate-table-head {
+    display: block;
+}
+
+#stat_table {
+
+    display:block;
+    width: 100%;
+    overflow: auto;
+    max-height: 350px;
+      
+}
+
+#stat-table-head tr {
+    display: block;
+}
 
 .btn-container button{
     /* background: red; */
@@ -43,6 +67,19 @@ secondary colors:
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.key-item > button {
+    width: 70px;
+    height: 15px;
+}
+
+.key-item{
+    padding:1em;
 }
 
 #chart-container{
@@ -99,6 +136,7 @@ canvas {
 body{
     min-height: 100vh;
     background: linear-gradient( white ,#F26925 );
+    /* background: no-repeat; */
  }
 
 .glass{
@@ -149,9 +187,7 @@ body{
     flex-direction:column;
     align-items: center;
 }
-a{
-    padding: 0em 0.3em;
-}
+
 #logout{
     display:flex;
     margin: 0%;
