@@ -154,5 +154,4 @@ public class AssociateDaoImpl implements AssociateDao {
             ResourceClosers.closeStatement(stmt);
         }
     }
-
 }

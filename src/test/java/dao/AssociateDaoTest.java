@@ -3,6 +3,10 @@ package dao;
 import config.ConnectionConfig;
 import config.ResourceClosers;
 import models.Associate;
+import models.AssociateAssignment;
+import models.AssociatePortfolio;
+import models.Flag;
+import org.mockito.Mock;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -15,123 +19,73 @@ import java.sql.SQLException;
 
 public class AssociateDaoTest{
 
+    private AssociateDaoImpl associatedaoimpl = new AssociateDaoImpl();
 
     @Test(groups = {"requireDB"})
-    public void testCreateAssociate(){
-        Connection conn = null;
-        PreparedStatement stmt = null;
+    public void testCreateAssociate() {
         String salesforceId = "12345";
         String firstName = "Mockito";
         String lastName = "Test";
         String email = "mockito.test@revature.com";
         String pswrd = "cocktail";
-        ResultSet result;
-
-        try {
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "insert into associate values(?, ?, ?, ?, ?)";
-            stmt = conn.prepareStatement(SQL);
-            stmt.setString(1, salesforceId);
-            stmt.setString(2, firstName);
-            stmt.setString(3, lastName);
-            stmt.setString(4, email);
-            stmt.setString(5, pswrd);
-            stmt.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Assert.fail();
-        } finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
-    }
-
-    @Test(groups = {"requireDB"})
-    public void testGetAssociateBySalesforce(){
-        Associate associate = new Associate();
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet set;
-        String salesforceId = "12345";
-
-        try {
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "select * from associate where salesforceId = ?";
-            stmt = conn.prepareStatement(SQL);
-            stmt.setString(1, salesforceId);
-            set = stmt.executeQuery();
-            while(set.next()) {
-                associate.setSalesforceId(set.getString(1));
-                associate.setFirstname(set.getString(2));
-                associate.setLastname(set.getString(3));
-                associate.setEmail(set.getString(4));
-                associate.setPassword(set.getString(5));
-
-            }
-            Assert.assertEquals(associate.getPassword(), "cocktail");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
+        associatedaoimpl.createAssociate(salesforceId,firstName,lastName,email,pswrd);
+        Assert.assertEquals(associatedaoimpl.getAssociateByEmail(email).getEmail(), email);
     }
 
     @Test(groups = {"requireDB"})
     public void testGetAssociateByEmail() {
-        Associate associate = new Associate();
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        String email = "mock11.associatee55fc94f-79e6-469b-8b19-95448707b944@mock.com";
-        ResultSet set = null;
-
-        try {
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "select * from associate where email = ?";
-            stmt = conn.prepareStatement(SQL);
-            stmt.setString(1, email);
-            set = stmt.executeQuery();
-            while (set.next()) {
-                associate.setSalesforceId(set.getString(1));
-                associate.setFirstname(set.getString(2));
-                associate.setLastname(set.getString(3));
-                associate.setEmail(set.getString(4));
-                associate.setPassword(set.getString(5));
-            }
-            Assert.assertEquals(associate.getPassword(), "TR-1146");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
+        Associate aport = associatedaoimpl.getAssociateByEmail("mock11.associatee55fc94f-79e6-469b-8b19-95448707b944@mock.com");
+        Assert.assertEquals(aport.getEmail(), "mock11.associatee55fc94f-79e6-469b-8b19-95448707b944@mock.com");
     }
 
-    @DataProvider (name = "edit-password")
-    public Object[][] editPasswordObject(){
-        return new Object[][] { { "12345", "banana"}};
+    @Test(groups = {"requireDB"})
+    public void testUpdateAssociateFirstName(){
+        String salesforceId = "12345";
+        String firstName = "Mockito";
+        String lastName = "Test";
+        String email = "mockito.test@revature.com";
+        String pswrd = "cocktail";
+        String newFirstName = "chorito";
+        associatedaoimpl.createAssociate(salesforceId,firstName,lastName,email,pswrd);
+
+        associatedaoimpl.updateAssociateFirstname(salesforceId, newFirstName);
+        Assert.assertEquals(associatedaoimpl.getAssociateBySalesforce(salesforceId).getFirstname(), newFirstName);
+        associatedaoimpl.updateAssociateFirstname(newFirstName, salesforceId);
     }
 
-    @Test(groups = {"requireDB"}, dataProvider = "edit-password")
-    public void testChangePassword(String salesforceId, String pswrd){
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        try{
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "UPDATE associate SET pswrd = ? WHERE salesforceId = ?";
-            stmt = conn.prepareStatement(SQL);
-            stmt.setString(1, pswrd);
-            stmt.setString(2, salesforceId);
-            stmt.execute();
-        }
-        catch (SQLException e){
-            e.printStackTrace();
-            Assert.fail();
-        }
-        finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
+    @Test(groups = {"requireDB"})
+    public void testUpdateAssociateLastName(){
+        String salesforceId = "12345";
+        String firstName = "Mockito";
+        String lastName = "Test";
+        String email = "mockito.test@revature.com";
+        String pswrd = "cocktail";
+        String newLastName = "Lallulu";
+        associatedaoimpl.createAssociate(salesforceId,firstName,lastName,email,pswrd);
+
+        associatedaoimpl.updateAssociateLastname(salesforceId, newLastName);
+        Assert.assertEquals(associatedaoimpl.getAssociateBySalesforce(salesforceId).getLastname(), newLastName);
+        associatedaoimpl.updateAssociateLastname(salesforceId, lastName);
+    }
+
+    @Test(groups = {"requireDB"})
+    public void testUpdateAssociateEmail(){
+        String salesforceId = "12345";
+        String firstName = "Mockito";
+        String lastName = "Test";
+        String email = "mockito.test@revature.com";
+        String pswrd = "cocktail";
+        String newEmail = "mockito-pass@revature.net";
+        associatedaoimpl.updateAssociateEmail(salesforceId, newEmail);
+        Assert.assertEquals(associatedaoimpl.getAssociateBySalesforce(salesforceId).getEmail(), newEmail);
+        associatedaoimpl.updateAssociateEmail(salesforceId, email);
+    }
+
+
+    @Test(groups = {"requireDB"})
+    public void testGetAssociateSalesforceID(){
+        Associate aport = associatedaoimpl.getAssociateBySalesforce("SF-2292");
+        Assert.assertEquals(aport.getSalesforceId(), "SF-2292");
     }
 
     @BeforeSuite

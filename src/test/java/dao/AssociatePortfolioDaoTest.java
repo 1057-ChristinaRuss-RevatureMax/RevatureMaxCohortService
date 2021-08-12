@@ -3,6 +3,8 @@ package dao;
 import config.ConnectionConfig;
 import config.ResourceClosers;
 import models.Associate;
+import models.AssociatePortfolio;
+import org.mockito.Mock;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -11,30 +13,44 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
 public class AssociatePortfolioDaoTest {
+    private AssociatePortfolioDaoImpl apidaoimpl;
+
+//    @Test(groups = {"requireDB"})
+//    public void testUpdateBio(){
+//        Connection conn = null;
+//        PreparedStatement stmt = null;
+//        String salesforceId = "12345";
+//        String bio = "I like to party";
+//        try {
+//            conn = ConnectionConfig.getConnection();
+//            final String SQL = "update associate_portfolio set bio = ? where salesforceId = ?";
+//            stmt = conn.prepareStatement(SQL);
+//            stmt.setString(1, bio);
+//            stmt.setString(2, salesforceId);
+//            stmt.execute();
+//            System.out.println("System successfully setup");
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            Assert.fail();
+//        }finally {
+//            ResourceClosers.closeConnection(conn);
+//            ResourceClosers.closeStatement(stmt);
+//        }
+//    }
+
+    @Mock
+    AssociatePortfolio associatePortfolio;
 
     @Test(groups = {"requireDB"})
     public void testUpdateBio(){
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        String salesforceId = "12345";
-        String bio = "I like to party";
-        try {
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "update associate_portfolio set bio = ? where salesforceId = ?";
-            stmt = conn.prepareStatement(SQL);
-            stmt.setString(1, bio);
-            stmt.setString(2, salesforceId);
-            stmt.execute();
-            System.out.println("System successfully setup");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Assert.fail();
-        }finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
+        AssociatePortfolio mockPort = new AssociatePortfolio("12345", "I like homes", "java", "NY");
+        verify(associatePortfolio,times(1)).getBio();
+//        Assert.assertEquals(apidaoimpl.updateBio("I like to party", "SF-2292"));
     }
 
     @Test(groups = {"requireDB"})

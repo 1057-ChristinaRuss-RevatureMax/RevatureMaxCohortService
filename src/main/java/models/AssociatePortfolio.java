@@ -58,4 +58,14 @@ public class AssociatePortfolio {
             return "Successfully set Salesforce ID";
         }
     }
+
+    @Override
+    public String toString() {
+        return "AssociatePortfolio{" +
+                "bio='" + bio + '\'' +
+                ", favoriteTechnology='" + favoriteTechnology + '\'' +
+                ", preference='" + preference + '\'' +
+                ", salesForceId='" + salesForceId + '\'' +
+                '}';
+    }
 }
