@@ -1,17 +1,16 @@
 package dao;
 
 import config.ConnectionConfig;
-import config.RDSConnectionConfig;
 import config.ResourceClosers;
-import models.Associate;
+import models.EmployeeDB;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class EmployeeDaoImpl {
+public class EmployeeDaoImpl implements EmployeeDao {
     public void createEmployee(int salesforceId, String firstName, String lastName, String email, String pass_word) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -31,6 +30,36 @@ public class EmployeeDaoImpl {
         } finally {
             ResourceClosers.closeConnection(conn);
             ResourceClosers.closeStatement(stmt);
+        }
+    }
+
+    @Override
+    public EmployeeDB getEmployeeBySalesforce(int salesforceId) {
+        EmployeeDB employee;
+        employee = new EmployeeDB();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet set = null;
+
+        try {
+            conn = ConnectionConfig.getConnection();
+            final String SQL = "select * from employee where salesforceId = ?";
+            stmt = conn.prepareStatement(SQL);
+            stmt.setInt(1, salesforceId);
+            set = stmt.executeQuery();
+            while(set.next()) {
+                employee.setSalesforceId(set.getInt(1));
+                employee.setFirstName(set.getString(2));
+                employee.setLastName(set.getString(3));
+                employee.setEmail(set.getString(4));
+                employee.setPassword(set.getString(5));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ResourceClosers.closeConnection(conn);
+            ResourceClosers.closeStatement(stmt);
+            return employee;
         }
     }
 

@@ -1,17 +1,20 @@
 package models;
 
 public class EmployeePortfolio {
-    private String salesforceId;
+    private int salesforceId;
     private String bio;
     private String location;
     private String technology;
-    private String password;
 
-    public EmployeePortfolio(String salesforceId, String bio, String location, String technology){
+    public EmployeePortfolio(int salesforceId, String bio, String location, String technology){
         this.salesforceId = salesforceId;
         this.bio = bio;
         this.location = location;
         this.technology = technology;
+    }
+
+    public EmployeePortfolio() {
+
     }
 
     public String getBio() {
@@ -38,23 +41,16 @@ public class EmployeePortfolio {
         this.location = location;
     }
 
-    public String getSalesForceId() {
+    public int getSalesForceId() {
         return salesforceId;
     }
 
-    public String getPassword(){
-        return password;
-    }
-
-    public void setPassword(String password){
-        this.password = password;
-    }
 
     public String setSalesForceId(String salesforceId) {
-        if(salesforceId.length() > 10 || salesforceId.isEmpty()) {
+        if(String.valueOf(salesforceId).length() > 10 || salesforceId.isEmpty()) {
             return "Invalid ID";
         } else {
-            this.salesforceId = salesforceId;
+            this.salesforceId = Integer.parseInt(salesforceId);
             return "Successfully set Salesforce ID";
         }
     }

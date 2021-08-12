@@ -88,28 +88,28 @@ public class AssociateDaoTest{
         Assert.assertEquals(aport.getSalesforceId(), "SF-2292");
     }
 
-    @BeforeSuite
-    public void beforeSuite() {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        String saleid = "12345";
-
-        try {
-            conn = ConnectionConfig.getConnection();
-            final String SQL = "DELETE from associate WHERE salesforceid = ?";
-            stmt = conn.prepareStatement(SQL);
-            stmt.setString(1, saleid);
-            stmt.executeUpdate();
-
-            System.out.println("Suite reset successful");
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally {
-            ResourceClosers.closeConnection(conn);
-            ResourceClosers.closeStatement(stmt);
-        }
-
-    }
+//    @BeforeSuite
+//    public void beforeSuite() {
+//        Connection conn = null;
+//        PreparedStatement stmt = null;
+//        String saleid = "12345";
+//
+//        try {
+//            conn = ConnectionConfig.getConnection();
+//            final String SQL = "DELETE from associate WHERE salesforceid = ?";
+//            stmt = conn.prepareStatement(SQL);
+//            stmt.setString(1, saleid);
+//            stmt.executeUpdate();
+//
+//            System.out.println("Suite reset successful");
+//        }
+//        catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        finally {
+//            ResourceClosers.closeConnection(conn);
+//            ResourceClosers.closeStatement(stmt);
+//        }
+//
+//    }
 }

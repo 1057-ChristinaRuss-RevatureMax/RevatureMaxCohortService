@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 
+import models.AssociatePortfolio;
+import models.EmployeePortfolio;
 import org.postgresql.shaded.com.ongres.scram.common.bouncycastle.pbkdf2.SHA256Digest;
 
 import java.sql.ResultSet;
@@ -89,5 +91,33 @@ public class EmployeePortfolioDao {
 			ResourceClosers.closeStatement(stmt);
 		}
     }
+
+	public EmployeePortfolio getPortfolioBySalesforce(int salesforceId) {
+		EmployeePortfolio portfolio;
+		portfolio = new EmployeePortfolio();
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet set = null;
+
+		try {
+			conn = ConnectionConfig.getConnection();
+			final String SQL = "select * from employee_portfolio where salesforceId = ?";
+			stmt = conn.prepareStatement(SQL);
+			stmt.setInt(1,(salesforceId));
+			set = stmt.executeQuery();
+			while(set.next()) {
+				portfolio.setSalesForceId(set.getString(1));
+				portfolio.setBio(set.getString(2));
+				portfolio.setTechnology(set.getString(3));
+				portfolio.setLocation(set.getString(4));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			ResourceClosers.closeConnection(conn);
+			ResourceClosers.closeStatement(stmt);
+			return portfolio;
+		}
+	}
 
 }
