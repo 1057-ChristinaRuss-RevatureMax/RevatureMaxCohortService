@@ -36,7 +36,7 @@ public class employeePortfolioDaoTest {
         int salesforceid = 123456;
         epd.updateTechnology(salesforceid, newtech);
         Assert.assertEquals(epd.getPortfolioBySalesforce(salesforceid).getTechnology(), newtech);
-        epd.updateTechnology(salesforceid, technology);
+        epd.updateTechnology(salesforceid, null);
     }
 
     @Test(groups = {"requireDB"})
@@ -46,7 +46,7 @@ public class employeePortfolioDaoTest {
         int salesforceid = 123456;
         epd.updateLocation(salesforceid, newloca);
         Assert.assertEquals(epd.getPortfolioBySalesforce(salesforceid).getLocation(), newloca);
-        epd.updateTechnology(salesforceid, location);
+        epd.updateLocation(salesforceid, null);
     }
 
     @Test(groups = {"requireDB"})
@@ -56,6 +56,6 @@ public class employeePortfolioDaoTest {
         int salesforceid = 123456;
         epd.updateBio(salesforceid, newbio);
         Assert.assertEquals(epd.getPortfolioBySalesforce(salesforceid).getBio(), newbio);
-        epd.updateTechnology(salesforceid, bio);
+        epd.updateBio(salesforceid, null);
     }
 }
